@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Navibar = styled.nav`
+export const Card = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -9,10 +9,8 @@ export const Navibar = styled.nav`
     height: 10vh;
     width: 100%;
     padding: 0 20px;
-    position: fixed;
-    top: 0;
     `;
-    export const Listed = styled.a`
+    export const CardContent = styled.a`
     display: flex;
     flex-direction: row;
     align-items: center;

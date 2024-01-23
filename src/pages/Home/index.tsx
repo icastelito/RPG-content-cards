@@ -1,11 +1,12 @@
 // import * as S from './styles';
-
+import {menuNavigation} from '../../utils.ts';
+import SelectionMenuNavigation from '../../components/SelectionMenu/index.tsx';
 const HomePage = () => {
 
     return (
 
         <div>
-            <h1>I BELIEVE I CAN FLY</h1>
+            <SelectionMenuNavigation navigationItems={menuNavigation}/>
         </div>
 
     )
