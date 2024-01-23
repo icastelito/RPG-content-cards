@@ -5,7 +5,7 @@ export const Navibar = styled.nav`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: #988abd;
+    background-color: #7068A3;
     height: 10vh;
     width: 100vw;
     padding: 0 20px;
@@ -17,7 +17,7 @@ export const Listed = styled.a`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: #cccccc;
+    background-color: #7068A3;
     height: 10vh;
     width: 100vw;
     padding: 0 20px;
