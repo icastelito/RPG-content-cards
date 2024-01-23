@@ -9,13 +9,13 @@ interface HeaderMenuProps {
 
 
 
-const HeaderMenuNavigation: React.FC<HeaderMenuProps> = ({navigationItems}) => (
+const SelectionMenuNavigation: React.FC<HeaderMenuProps> = ({navigationItems}) => (
     
-  <S.Navibar>
+  <S.Card>
       {navigationItems.map((item) => (
-        <S.Listed key={item.name} href={item.path}> {item.name} </S.Listed>
+        <S.CardContent key={item.name} href={item.path}> {item.name} </S.CardContent>
       ))}
-  </S.Navibar>
+  </S.Card>
 );
 
-export default HeaderMenuNavigation;
+export default SelectionMenuNavigation;
