@@ -14,7 +14,6 @@ export const NameContainer = styled.span`
     padding: 0;
     text-decoration: none;
     box-sizing: border-box;
-    background-color: #000000;
     display: flex;
     flex-direction: column;
     align-items: center;

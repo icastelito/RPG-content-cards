@@ -2,6 +2,7 @@
 // import { Link } from "react-router-dom";
 import * as S from "./styles";
 import { menuNavigationProps } from "../../utils";
+import { LogoNodejs } from 'react-ionicons'
 
 interface HeaderMenuProps {
   navigationItems:  menuNavigationProps[];
@@ -10,10 +11,14 @@ interface HeaderMenuProps {
 
 
 const SelectionMenuNavigation: React.FC<HeaderMenuProps> = ({navigationItems}) => (
-    
   <S.Card>
       {navigationItems.map((item) => (
-        <S.CardContent key={item.name} href={item.path}> {item.name} </S.CardContent>
+        <div key={item.name}>
+          <S.CardContent href={item.path}> 
+          <LogoNodejs/>
+            {item.name} 
+          </S.CardContent>
+        </div>
       ))}
   </S.Card>
 );

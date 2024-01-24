@@ -5,19 +5,30 @@ export const Card = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    background-color: #988abd;
-    height: 10vh;
-    width: 100%;
-    padding: 0 20px;
-    `;
-    export const CardContent = styled.a`
+    border-radius: 10px;
+`;
+    
+export const CardContent = styled.a`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    height: 5vh;
-    width: 10vw;
+    justify-content: center;
+    min-height: 20dvh;
+    width: 15dvh;
+    background-color: #988abd;
+    height: auto;
     padding: 0 20px;
+    margin: 10px;
     color: #ffffff;
-    border-bottom: 1px solid #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    transition: 0.5s;
+    
+    &:hover {
+        background-color: #ffffff;
+        transition: 0.75s;
+        transform: scale(1.025);
+        box-shadow: 0 0 10px #ffffff;
+        color: #988abd;
+    }
 `;
