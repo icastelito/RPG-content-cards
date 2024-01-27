@@ -12,8 +12,8 @@ export const Showcase = styled.section`
 export const ShowcaseContent = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 400px;
-  background-color: rgba(69, 69, 69, 0.5); // 50% transparent
+  min-height: 300px;
+  background-color: rgba(86, 58, 87, 0.4);
   border-radius: 1px;
   box-shadow: 0 0 3px #333;
   margin: 10px;

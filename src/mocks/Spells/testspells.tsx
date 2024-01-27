@@ -4,7 +4,7 @@ export interface SpellProps {
   name: string;
   level: number;
   school: string;
-  description: string;
+  description: string[];
   castingTime: string;
   range: string;
   components: string[];
@@ -17,7 +17,7 @@ export const spellsTest: SpellProps[] = [
     name: "Bola de Fogo",
     level: 3,
     school: "Evocação",
-    description: "Cria uma esfera de fogo que explode em um ponto escolhido.",
+    description: ["Cria uma esfera de fogo que explode em um ponto escolhido."],
     castingTime: "1 ação",
     range: "120 pés",
     components: ["V", "S", "M (um grão de pimenta)"],
@@ -28,7 +28,7 @@ export const spellsTest: SpellProps[] = [
     name: "Curar Ferimentos",
     level: 1,
     school: "Cura",
-    description: "Cura criaturas feridas, restaurando pontos de vida.",
+    description: ["Cura criaturas feridas, restaurando pontos de vida."],
     castingTime: "1 ação",
     range: "Toque",
     components: ["V", "S"],
@@ -39,7 +39,7 @@ export const spellsTest: SpellProps[] = [
     name: "Ilusão de Invisibilidade",
     level: 2,
     school: "Ilusão",
-    description: "Torna o alvo invisível por uma determinada duração.",
+    description: ["Torna o alvo invisível por uma determinada duração."],
     castingTime: "1 ação",
     range: "Toque",
     components: ["V", "S"],
@@ -50,7 +50,7 @@ export const spellsTest: SpellProps[] = [
     name: "Relâmpago",
     level: 3,
     school: "Evocação",
-    description: "Invoca um raio de relâmpago para atingir um alvo.",
+    description: ["Invoca um raio de relâmpago para atingir um alvo."],
     castingTime: "1 ação",
     range: "100 pés",
     components: ["V", "S", "M (um pedaço de resina e um fio de cobre)"],
@@ -61,7 +61,7 @@ export const spellsTest: SpellProps[] = [
     name: "Mão Mágica",
     level: 1,
     school: "Conjuração",
-    description: "Cria uma mão flutuante que pode realizar tarefas simples.",
+    description: ["Cria uma mão flutuante que pode realizar tarefas simples."],
     castingTime: "1 ação",
     range: "30 pés",
     components: ["V", "S"],
@@ -72,7 +72,7 @@ export const spellsTest: SpellProps[] = [
     name: "Congelamento Temporal",
     level: 5,
     school: "Abjuração",
-    description: "Pára o tempo ao redor do alvo por um curto período.",
+    description: ["Pára o tempo ao redor do alvo por um curto período."],
     castingTime: "1 ação",
     range: "60 pés",
     components: ["V", "S", "M (um relógio de areia)"],
@@ -83,7 +83,7 @@ export const spellsTest: SpellProps[] = [
     name: "Charme de Encanto",
     level: 2,
     school: "Encantamento",
-    description: "Encanta a mente do alvo, tornando-o amigável.",
+    description: ["Encanta a mente do alvo, tornando-o amigável."],
     castingTime: "1 ação",
     range: "30 pés",
     components: ["V", "S"],
@@ -94,7 +94,7 @@ export const spellsTest: SpellProps[] = [
     name: "Petrificação de Pedra",
     level: 4,
     school: "Transmutação",
-    description: "Transforma o alvo em pedra temporariamente.",
+    description: ["Transforma o alvo em pedra temporariamente."],
     castingTime: "1 ação",
     range: "60 pés",
     components: ["V", "S", "M (um olho de basilisco)"],
@@ -105,7 +105,7 @@ export const spellsTest: SpellProps[] = [
     name: "Clarão de Luz",
     level: 0,
     school: "Evocação",
-    description: "Cria uma luz brilhante em um local.",
+    description: ["Cria uma luz brilhante em um local."],
     castingTime: "1 ação",
     range: "Toque",
     components: ["V", "M (um grão de fósforo)"],
@@ -116,7 +116,7 @@ export const spellsTest: SpellProps[] = [
     name: "Bálsamo de Cura Menor",
     level: 0,
     school: "Cura",
-    description: "Cura pequenas feridas.",
+    description: ["Cura pequenas feridas."],
     castingTime: "1 ação",
     range: "Toque",
     components: ["V", "S"],

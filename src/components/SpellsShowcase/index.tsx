@@ -5,27 +5,29 @@ interface SpellShowcaseProps {
   spellsList: SpellProps[];
 }
 
-const SpellShowcase: React.FC<SpellShowcaseProps> = ({spellsList}) => (
+const SpellShowcase: React.FC<SpellShowcaseProps> = ({ spellsList }) => (
   <S.Showcase>
     {spellsList.map((item) => (
-        <S.ShowcaseContent  key={item.id}>  
-          
-          <S.SpellName> {item.name} </S.SpellName>
-          <S.SpellLevelSchool> {item.level}º nível de {item.school} </S.SpellLevelSchool>
-          <S.SpellDescription> {item.description} </S.SpellDescription>
-          <S.SpellCastingTime> {item.castingTime} </S.SpellCastingTime>
-          <S.SpellRange> {item.range} </S.SpellRange>
-          <S.SpellComponents> {item.components} </S.SpellComponents>
-          <S.SpellDuration> {item.duration} </S.SpellDuration>
-
-          
-
-
-
-   
-        </S.ShowcaseContent>
+      <S.ShowcaseContent key={item.id} >
+        <S.SpellName> {item.name} </S.SpellName>
+        <S.SpellLevelSchool>
+          {" "}
+          {item.level}º nível de {item.school}{" "}
+        </S.SpellLevelSchool>
+        <S.SpellComponents>
+          {" "}
+          Componentes: {item.components[0]}, {item.components[1]},{" "}
+          {item.components[2]}{" "}
+        </S.SpellComponents>
+        <S.SpellCastingTime>
+          {" "}
+          Tempo de Conjuração: {item.castingTime}{" "}
+        </S.SpellCastingTime>
+        <S.SpellDuration> Tempo de Duração: {item.duration} </S.SpellDuration>
+        <S.SpellDescription> Descrição: {item.description} </S.SpellDescription>
+        <S.SpellRange> Alcance: {item.range} </S.SpellRange>
+      </S.ShowcaseContent>
     ))}
-    
   </S.Showcase>
 );
 
