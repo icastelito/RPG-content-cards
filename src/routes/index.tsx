@@ -3,6 +3,7 @@
 import { BrowserRouter as Router, Route, Routes, /*useLocation*/ } from 'react-router-dom';
 import InitialPage from '../pages/InitialPage/index.tsx';
 import HomePage from '../pages/Home/index.tsx';
+import Spells from '../pages/Spells/index.tsx';
 
 function AppRoutes() {
     // let location = useLocation();
@@ -13,6 +14,7 @@ function AppRoutes() {
                     <Routes>
                         <Route path="/" element={<InitialPage />} />
                         <Route path="/home" element={<HomePage />} />
+                        <Route path='/spells' element={<Spells/>} />
                         {/* Add more routes as necessary */}
                     </Routes>
                 </Router>

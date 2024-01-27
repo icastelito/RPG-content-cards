@@ -11,13 +11,13 @@ interface HeaderMenuProps {
 
 const SelectionMenuNavigation: React.FC<HeaderMenuProps> = ({navigationItems}) => (
   <S.Card>
-      {navigationItems.map((item) => (
-        <div key={item.name}>
-          <S.CardContent href={item.path}> 
-            {item.name} 
-          </S.CardContent>
-        </div>
-      ))}
+    {navigationItems.slice(1).map((item) => (
+      <div key={item.name}>
+        <S.CardContent href={item.path}> 
+          {item.name} 
+        </S.CardContent>
+      </div>
+    ))}
   </S.Card>
 );
 
