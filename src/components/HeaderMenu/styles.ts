@@ -10,7 +10,9 @@ export const Navibar = styled.nav`
     width: 100%;
     position: fixed;
     top: 0;
+    align-self: flex-start;
     `;
+
     export const Listed = styled.a`
     display: flex;
     flex-direction: row;

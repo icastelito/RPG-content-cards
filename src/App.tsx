@@ -1,33 +1,20 @@
-import * as S from './Styles.ts'
-import Routes from './routes/index.tsx';
-import HeaderMenuNavigation from './components/HeaderMenu/index.tsx';
-import {menuNavigation} from './utils.ts';
-
-
+import * as S from "./Styles.ts";
+import Routes from "./routes/index.tsx";
+import HeaderMenuNavigation from "./components/HeaderMenu/index.tsx";
+import { menuNavigation } from "./utils.ts";
 
 const App = () => {
-
-
-
   return (
-      <>
-      <S.Background>
-        <S.Header>
-          <HeaderMenuNavigation navigationItems={menuNavigation}/>
-        </S.Header>
+    <S.Background>
+      <S.HeaderContent>
+        <HeaderMenuNavigation navigationItems={menuNavigation} />
+      </S.HeaderContent>
 
-        <S.Body>
-          <Routes />
-        </S.Body>
-        
-      </S.Background>
-      </>
-  )
-}
+      <S.MainContent>
+        <Routes />
+      </S.MainContent>
+    </S.Background>
+  );
+};
 
 export default App;
-
-
-
-
-
