@@ -1,5 +1,4 @@
 export interface SpellProps {
-
   id: number;
   name: string;
   level: number;
