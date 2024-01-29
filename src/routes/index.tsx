@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes, /*useLocation*/ } from 'react-r
 import InitialPage from '../pages/InitialPage/index.tsx';
 import HomePage from '../pages/Home/index.tsx';
 import Spells from '../pages/Spells/index.tsx';
+import Itens from '../pages/Itens/index.tsx';
 
 function AppRoutes() {
     // let location = useLocation();
@@ -15,6 +16,7 @@ function AppRoutes() {
                         <Route path="/" element={<InitialPage />} />
                         <Route path="/home" element={<HomePage />} />
                         <Route path='/spells' element={<Spells/>} />
+                        <Route path='/itens' element={<Itens/>} />
                         {/* Add more routes as necessary */}
                     </Routes>
                 </Router>

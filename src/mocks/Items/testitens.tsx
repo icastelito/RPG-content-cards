@@ -17,6 +17,5 @@ export const itensTest: ItensProps[] = [
     rarity: "Comum",
     description: ["Um pergaminho que quando lido garante um bônus de +1 em testes de Intimidação."]
 
-
   },
 ]

@@ -19,13 +19,14 @@ const SpellShowcase: React.FC<SpellShowcaseProps> = ({ spellsList }) => (
           Componentes: {item.components[0]}, {item.components[1]},{" "}
           {item.components[2]}{" "}
         </S.SpellComponents>
+        <S.horizontalLine />
         <S.SpellCastingTime>
           {" "}
           Tempo de Conjuração: {item.castingTime}{" "}
         </S.SpellCastingTime>
         <S.SpellDuration> Tempo de Duração: {item.duration} </S.SpellDuration>
-        <S.SpellDescription> Descrição: {item.description} </S.SpellDescription>
         <S.SpellRange> Alcance: {item.range} </S.SpellRange>
+        <S.SpellDescription> Descrição: {item.description} </S.SpellDescription>
       </S.ShowcaseContent>
     ))}
   </S.Showcase>
