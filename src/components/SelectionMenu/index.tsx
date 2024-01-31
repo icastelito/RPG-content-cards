@@ -1,6 +1,7 @@
 import * as S from "./styles";
 import { menuNavigationProps } from "../../utils";
 import { useNavigate } from "react-router-dom";
+import RenderIcon from "../IconRender";
 
 interface HeaderMenuProps {
   navigationItems: menuNavigationProps[];
@@ -19,9 +20,10 @@ const SelectionMenuNavigation: React.FC<HeaderMenuProps> = ({
     <S.Card>
       {navigationItems.slice(1).map((item) => (
         <div key={item.name}>
-          <S.RouteButton onClick={() => handleCardClick(item.path)}>
-            <S.CardContent>{item.name}</S.CardContent>
-          </S.RouteButton>
+          <S.CardContent onClick={() => handleCardClick(item.path)}>
+            <RenderIcon iconName={item.icon} />
+            {item.name}
+          </S.CardContent>
         </div>
       ))}
     </S.Card>

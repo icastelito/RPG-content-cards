@@ -12,6 +12,7 @@ export const Navibar = styled.nav`
     justify-content: flex-end;
     align-self: flex-start;
     backdrop-filter: blur(10px);
+    right: 0;
 `;
 
 

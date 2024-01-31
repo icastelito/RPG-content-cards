@@ -3,6 +3,7 @@
 import SpellShowcase from "../../components/SpellsShowcase";
 // import api from "../../config/api";
 import { spellsTest,/* SpellProps*/ } from "../../mocks/Spells/testspells";
+import { HeaderIndex } from "../Index";
 import * as S from "./styles";
 
 const Spells = () => {
@@ -39,9 +40,14 @@ const Spells = () => {
 
 
 return (
+  <>
+  <HeaderIndex />
+
   <S.ShowcaseSection>
     <SpellShowcase spellsList={spellsTest}/>
   </S.ShowcaseSection>
+  
+  </>
 );
 };
 

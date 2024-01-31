@@ -1,15 +1,13 @@
-// import * as S from './styles';
-import {menuNavigation} from '../../utils.ts';
-import SelectionMenuNavigation from '../../components/SelectionMenu/index.tsx';
+
+import { MainContentIndex, HeaderIndex } from '../Index/index.tsx';
 const HomePage = () => {
-
-    return (
-
-        <div>
-            <SelectionMenuNavigation navigationItems={menuNavigation}/>
-        </div>
-
-    )
-  }
+  return (
+    <div>
+        <HeaderIndex />
+         <MainContentIndex />
+      
+    </div>
+  );
+};
 
 export default HomePage;

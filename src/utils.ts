@@ -6,7 +6,7 @@ export interface menuNavigationProps {
 
 export const menuNavigation: menuNavigationProps[] = [
     { name: 'Home', path: '/home', icon: 'home' },
-    { name: 'Magias', path: '/spells', icon: 'beer' },
+    { name: 'Magias', path: '/spells', icon: 'spells' },
     { name: 'Itens', path: '/itens', icon: 'backpack' },
     //{ name: 'Monstros', path: '/monstros', icon: 'dragon' },
     //{ name: 'Personagens', path: '/personagens', icon: 'user' },
