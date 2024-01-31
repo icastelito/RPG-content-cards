@@ -1,5 +1,5 @@
 
-import { MainContentIndex, HeaderIndex } from '../Index/index.tsx';
+import { MainContentIndex, HeaderIndex } from '../../components/RouterRender/index.tsx';
 const HomePage = () => {
   return (
     <div>

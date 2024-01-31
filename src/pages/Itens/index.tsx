@@ -1,6 +1,6 @@
 import ItensShowcase from "../../components/ItensShowcase";
 import { itensTest } from "../../mocks/Items/testitens";
-import { HeaderIndex } from "../Index";
+import { HeaderIndex } from "../../components/RouterRender";
 import * as S from "./styles";
 
 const Itens = () => {

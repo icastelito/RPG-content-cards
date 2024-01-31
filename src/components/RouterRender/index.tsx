@@ -1,6 +1,6 @@
 import { menuNavigation } from "../../utils.ts";
-import SelectionMenuNavigation from "../../components/SelectionMenu/index.tsx";
-import HeaderMenuNavigation from "../../components/HeaderMenu/index.tsx";
+import SelectionMenuNavigation from "../SelectionMenu/index.tsx";
+import HeaderMenuNavigation from "../HeaderMenu/index.tsx";
 
 export const HeaderIndex = () => {
   return (

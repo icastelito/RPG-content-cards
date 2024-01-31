@@ -5,7 +5,7 @@ import InitialPage from '../pages/InitialPage/index.tsx';
 import HomePage from '../pages/Home/index.tsx';
 import Spells from '../pages/Spells/index.tsx';
 import Itens from '../pages/Itens/index.tsx';
-import { HeaderIndex, MainContentIndex } from '../pages/Index/index.tsx';
+import { HeaderIndex, MainContentIndex } from '../components/RouterRender/index.tsx';
 
 
 function AppRoutes() {

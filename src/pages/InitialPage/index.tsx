@@ -2,17 +2,20 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as S from './styles';
 
+
 const InitialPage = () => {
     const navigate = useNavigate();
     const [animationComplete, setAnimationComplete] = useState(false);
+    const word = "ASTRA";
+    const letters = word.split('');
 
     useEffect(() => {
         const animationTimeout = setTimeout(() => {
             setAnimationComplete(true);
-        }, 2750);
+        }, letters.length * 314 + 942); // adjust timeout to word length
 
         return () => clearTimeout(animationTimeout);
-    }, []);
+    }, [letters.length]);
 
     useEffect(() => {
         if (animationComplete) {
@@ -21,14 +24,13 @@ const InitialPage = () => {
     }, [animationComplete, navigate]);
 
     return (
-        
-            <S.NameContainer>
-                <S.Letter1>A</S.Letter1>
-                <S.Letter2>s</S.Letter2>
-                <S.Letter3>t</S.Letter3>
-                <S.Letter4>r</S.Letter4>
-                <S.Letter5>a</S.Letter5>
-            </S.NameContainer>
+        <div>
+            {letters.map((letter, index) => (
+                <S.Letter key={index} delay={index/3.14}>
+                    {letter}
+                </S.Letter>
+            ))}
+        </div>
     );
 };
 
