@@ -7,6 +7,13 @@ export const Card = styled.div`
     justify-content: flex-start;
     border-radius: 10px;
 `;
+
+export const RouteButton = styled.button` 
+width: auto;
+height: auto;
+`;
+
+
     
 export const CardContent = styled.a`
     display: flex;

@@ -1,30 +1,31 @@
-// import { IconContext } from "react-icons";
-// import { Link } from "react-router-dom";
 import * as S from "./styles";
 import { menuNavigationProps } from "../../utils";
-import RenderIcon from "../IconRender";
-
+import { useNavigate } from "react-router-dom";
 
 interface HeaderMenuProps {
-  navigationItems:  menuNavigationProps[];
+  navigationItems: menuNavigationProps[];
 }
 
+const SelectionMenuNavigation: React.FC<HeaderMenuProps> = ({
+  navigationItems,
+}) => {
+  const navigate = useNavigate();
 
+  const handleCardClick = (way: string) => {
+    navigate(way);
+  };
 
-const SelectionMenuNavigation: React.FC<HeaderMenuProps> = ({navigationItems}) => (
-  <S.Card>
-    {navigationItems.slice(1).map((item) => (
-      <div key={item.name}>
-        <S.CardContent href={item.path}> 
-          {item.name}
-
-        <RenderIcon iconName={item.icon} />
-
-
-        </S.CardContent>
-      </div>
-    ))}
-  </S.Card>
-);
+  return (
+    <S.Card>
+      {navigationItems.slice(1).map((item) => (
+        <div key={item.name}>
+          <S.RouteButton onClick={() => handleCardClick(item.path)}>
+            <S.CardContent>{item.name}</S.CardContent>
+          </S.RouteButton>
+        </div>
+      ))}
+    </S.Card>
+  );
+};
 
 export default SelectionMenuNavigation;
