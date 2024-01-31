@@ -5,9 +5,12 @@ import * as S from "./styles";
 const Itens = () => {
 
 return (
+  <>
+  
   <S.ShowcaseSection>
     <ItensShowcase itensList={itensTest}/>
   </S.ShowcaseSection>
+  </>
 );
 };
 
