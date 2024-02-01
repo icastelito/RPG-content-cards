@@ -12,7 +12,7 @@ const InitialPage = () => {
     useEffect(() => {
         const animationTimeout = setTimeout(() => {
             setAnimationComplete(true);
-        }, letters.length * 314 + 942); // adjust timeout to word length
+        }, letters.length * 314 + 628); // adjust timeout to word length
 
         return () => clearTimeout(animationTimeout);
     }, [letters.length]);

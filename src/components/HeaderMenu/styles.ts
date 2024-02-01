@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import {theme} from "../../styles/theme";
 
 export const Navibar = styled.nav`
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: rgba(86, 58, 87, 0.4);
+    background-color: ${theme.getColor("primary", 0.8)};
     height: auto;
     width: 100%;
     position: fixed;
