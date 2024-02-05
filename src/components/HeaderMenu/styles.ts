@@ -5,7 +5,7 @@ export const Navibar = styled.nav`
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: ${theme.getColor("primary", 0.8)};
+    background-color: ${theme.getColor("primary", 0.6)};
     height: auto;
     width: 100%;
     position: fixed;
@@ -26,13 +26,13 @@ export const Listed = styled.a`
   min-width: 7dvw;
   width: auto;
   padding: 0 20px;
-  color: #ffffff;
+  color: ${theme.getColor("white", 0.8)};
   transition: 0.5s;
-  border-bottom: 1px solid #988abd;
+  border-bottom: 1px solid ${theme.getColor("grey", 0.0)};
   &:hover {
-    background-color: rgba(200, 200, 200, 0.4);
-    border-bottom: 1px solid #cccccc;
-    color: #988abd;
+    background-color: ${theme.getColor("grey", 0.2)};
+    border-bottom: 1px solid ${theme.getColor("grey", 0.5)};
+    color: ${theme.getColor("white", 1)};
     transition: 0.75s;
   }
 `;

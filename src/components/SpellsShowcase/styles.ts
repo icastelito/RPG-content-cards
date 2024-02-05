@@ -3,9 +3,10 @@ import styled from "styled-components";
 export const Showcase = styled.section`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 20px;
+  grid-gap: 55px;
   justify-items: stretch;
-  border-radius: 10px;
+  border-radius: 5px;
+  align-items: start;
   width: 100%;
 `;
 

@@ -1,6 +1,4 @@
 interface ColorScheme {
-        primary: string;
-        white: string;
         [key: string]: string;
       }
 
@@ -8,7 +6,12 @@ interface ColorScheme {
 export const theme = {
         colors: {
                 primary: 'RGB(86, 58, 87)',
-                white: 'RGB(255, 255, 255)',
+                secondary: 'RGB(98, 138, 206)',
+                red: 'RGB(200, 0, 0)',
+                blue: 'RGB(0, 0, 200)',
+                green: 'RGB(0, 200, 0)',
+                grey: 'RGB(180, 180, 180)',
+                white: 'RGB(250, 250, 250)',
         } as ColorScheme,
         fonts: {
                 body: 'system-ui, sans-serif',
