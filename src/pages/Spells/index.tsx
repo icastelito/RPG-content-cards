@@ -43,7 +43,7 @@ return (
   <HeaderIndex />
 
   <S.ShowcaseSection>
-    <SpellShowcase spellsList={spellsTest}/>
+    <SpellShowcase spellsList={renderSpells}/>
   </S.ShowcaseSection>
   
   </>
