@@ -6,48 +6,40 @@ import { HeaderIndex } from "../../components/RouterRender";
 import * as S from "./styles";
 
 const Spells = () => {
-  
+
   const [requestedSpells, setRequestedSpells] = useState([] as SpellProps[]);
   const [renderSpells, setRenderSpells] = useState([] as SpellProps[]);
-
+  
   const fetchData = async () => {
     try {
-      const res = await api.get("/spell/");
+      const res = await api.get("/spells");
       console.log(res.data);
       setRequestedSpells(res.data.data as SpellProps[]);
+      if (requestedSpells.length > 0) {
+        setRenderSpells(requestedSpells);
+      } else {
+        setRenderSpells(spellsTest);
+      }
     } catch (err) {
       console.log(err);
     }
   };
-
+  
   useEffect(() => {
     fetchData();
   }, []);
 
-  // console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-  // console.log("" + renderSpells);
-  
 
-  useEffect(() => {
-    if (requestedSpells.length !== 0) {
-      setRenderSpells(requestedSpells);
-    } else {
-      setRenderSpells(spellsTest);
-    }
-  }, [requestedSpells]);
-  
+  return (
+    <>
+      <HeaderIndex />
 
+      <S.ShowcaseSection>
+        <SpellShowcase spellsList={renderSpells} />
+      </S.ShowcaseSection>
 
-return (
-  <>
-  <HeaderIndex />
-
-  <S.ShowcaseSection>
-    <SpellShowcase spellsList={renderSpells}/>
-  </S.ShowcaseSection>
-  
-  </>
-);
+    </>
+  );
 };
 
 export default Spells;
