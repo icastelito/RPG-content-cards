@@ -4,9 +4,9 @@ export interface menuNavigationProps {
     icon: string;
   }
 
-export const menuNavigation: menuNavigationProps[] = [
+export const  menuNavigation: menuNavigationProps[] = [
     { name: 'Home', path: '/home', icon: 'home' },
-    { name: 'Magias', path: '/spells', icon: 'spells' },
+    { name: 'Magias', path: '/spells', icon: 'GiSpellBook' },
     { name: 'Itens', path: '/itens', icon: 'backpack' },
     //{ name: 'Monstros', path: '/monstros', icon: 'dragon' },
     //{ name: 'Personagens', path: '/personagens', icon: 'user' },
