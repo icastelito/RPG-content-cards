@@ -7,25 +7,24 @@ import * as S from "./styles";
 
 const Spells = () => {
 
-  const [requestedSpells, setRequestedSpells] = useState([] as SpellProps[]);
   const [renderSpells, setRenderSpells] = useState([] as SpellProps[]);
   
   const fetchData = async () => {
     try {
       const res = await api.get("/spell/");
-      console.log(res.data);
-      setRequestedSpells(res.data.data as SpellProps[]);
-      if (requestedSpells.length > 0) {
-        setRenderSpells(requestedSpells);
+      console.log(res.data.data);
+
+      if (res.data.data.length > 0) {
+        setRenderSpells(res.data.data);
       } else {
         setRenderSpells(spellsTest);
       }
 
-      console.log(JSON.stringify(requestedSpells.length));
-      // console.log("@@@ Requested Spells"+ requestedSpells.toString());
-      // console.log("@@@ render Spells"+ renderSpells);
+      console.log(res.data.data);
+      console.log("@@@ render Spells"+ renderSpells);
     } catch (err) {
       console.log(err);
+      setRenderSpells(spellsTest);
     }
   };
   
@@ -37,10 +36,11 @@ const Spells = () => {
   return (
     <>
       <HeaderIndex />
-
+      {
       <S.ShowcaseSection>
         <SpellShowcase spellsList={renderSpells} />
       </S.ShowcaseSection>
+      }
 
     </>
   );
