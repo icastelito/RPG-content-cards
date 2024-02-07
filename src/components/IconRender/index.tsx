@@ -1,10 +1,12 @@
+import * as S from "./styles"
 import * as FaIcons from "react-icons/fa";
 import * as GiIcons from "react-icons/gi";
 import { IconType } from "react-icons";
-import * as S from "./styles"
 
 interface RenderIconProps {
   iconName: string;
+  iconSize?: number;
+  iconColor?: string;
 }
 
 interface IconMapper {
@@ -15,14 +17,16 @@ const iconMapper: IconMapper = {
   FaBeer: FaIcons.FaBeer,
   FaCoffee: FaIcons.FaCoffee,
   GiSpellBook: GiIcons.GiSpellBook,
+  GiBatwingEmblem: GiIcons.GiBatwingEmblem,
+  GiWingedSword: GiIcons.GiWingedSword,
 };
 
-const RenderIcon: React.FC<RenderIconProps> = ({ iconName }) => {
+const RenderIcon: React.FC<RenderIconProps> = ({ iconName, iconSize, iconColor }) => {
   const Icon = iconMapper[iconName] || FaIcons.FaQuestion;
 
   return (
         <S.StyledIcon>
-                <Icon size={50}/>
+                <Icon size={iconSize} color={iconColor}/>
         </S.StyledIcon>
   );
 };

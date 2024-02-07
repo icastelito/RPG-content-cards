@@ -16,16 +16,19 @@ const SelectionMenuNavigation: React.FC<HeaderMenuProps> = ({
     navigate(way);
   };
 
+  console.log(navigationItems);
   return (
     <S.Rowler>
-      {navigationItems.slice(1).map((item) => (
-        <div key={item.name}>
-          <S.ContentButtom onClick={() => handleCardClick(item.path)}>
-            <RenderIcon iconName={item.icon} />
-            {item.name}
-          </S.ContentButtom>
-        </div>
-      ))}
+      {navigationItems.slice(1).map((item) => {
+        return (
+          <div key={item.name}>
+            <S.ContentButtom onClick={() => handleCardClick(item.path)}>
+              <RenderIcon {...item}/>
+              {item.name}
+            </S.ContentButtom>
+          </div>
+        );
+      })}
     </S.Rowler>
   );
 };
