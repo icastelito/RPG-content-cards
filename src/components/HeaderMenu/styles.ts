@@ -26,13 +26,11 @@ export const Listed = styled.a`
   min-width: 7dvw;
   width: auto;
   padding: 0 20px;
-  color: ${theme.getColor("white", 0.8)};
   transition: 0.5s;
   border-bottom: 1px solid ${theme.getColor("grey", 0.0)};
   &:hover {
     background-color: ${theme.getColor("grey", 0.2)};
     border-bottom: 1px solid ${theme.getColor("grey", 0.5)};
-    color: ${theme.getColor("white", 1)};
     transition: 0.75s;
   }
 `;

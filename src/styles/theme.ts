@@ -1,3 +1,6 @@
+import { createGlobalStyle } from "styled-components";
+
+
 interface ColorScheme {
         [key: string]: string;
       }
@@ -7,14 +10,18 @@ export const theme = {
         colors: {
                 primary: 'RGB(86, 58, 87)',
                 secondary: 'RGB(98, 138, 206)',
-                red: 'RGB(200, 0, 0)',
-                blue: 'RGB(0, 0, 200)',
+                white: 'rgb(249, 249, 249)',
+                lightGrey: 'rgb(236, 236, 236)',
+                mediumGrey: 'rgb(167, 167, 167)',
+                grey: 'rgb(196, 196, 196)',
+                darkGrey: 'rgb(52, 52, 52)',
+                black: 'rgb(29, 2, 29)',
                 green: 'RGB(0, 200, 0)',
-                grey: 'RGB(180, 180, 180)',
-                white: 'RGB(250, 250, 250)',
+                blue:'rgb(27, 119, 243)',
+                red: 'rgb(207, 60, 63)',
         } as ColorScheme,
         fonts: {
-                body: 'system-ui, sans-serif',
+                body: 'comic-sans, sans-serif',
                 heading: 'system-ui, sans-serif',
         },
         fontSizes: {
@@ -40,3 +47,22 @@ export const theme = {
                 return `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, ${opacity})`;
         },
 };
+        export const GlobalStyle = createGlobalStyle`
+          body {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                place-items: center;
+                min-width: 320px;
+                min-height: 100vh;
+          }
+
+          a {
+                font-weight: 500;
+                color: ${theme.colors.white};
+                text-decoration: inherit;
+              }
+              a:hover {
+                color: ${theme.colors.darkGrey};
+              }
+        `;
