@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../styles/theme";
 
 export const Rowler = styled.div`
   display: flex;
@@ -19,20 +20,18 @@ export const ContentButtom = styled.a`
   justify-content: center;
   min-height: 20dvh;
   width: 15dvh;
-  background-color: #988abd;
+  background-color: ${theme.getColor("primary", 0.8)};
   height: auto;
   padding: 0 20px;
   margin: 10px;
-  color: #ffffff;
-  border: 1px solid #ffffff;
+  border: 3px solid ${theme.getColor("darkGrey", 0.5)};
   border-radius: 10px;
-  transition: 0.5s;
+  transition: 0.4s;
 
   &:hover {
-    background-color: #ffffff;
-    transition: 0.75s;
-    transform: scale(1.025);
-    box-shadow: 0 0 10px #ffffff;
-    color: #988abd;
+    background-color: ${theme.getColor("primary", 0.4)};
+    transition: 0.85s;
+    transform: scale(1.03);
+    box-shadow: 0 0 10px ${theme.getColor("grey", 0.9)};
   }
 `;

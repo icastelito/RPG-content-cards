@@ -5,7 +5,7 @@ export const Navibar = styled.nav`
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: ${theme.getColor("primary", 0.6)};
+    background-color: ${theme.getColor("primary", 0.8)};
     height: auto;
     width: 100%;
     position: fixed;
@@ -29,8 +29,8 @@ export const Listed = styled.a`
   transition: 0.5s;
   border-bottom: 1px solid ${theme.getColor("grey", 0.0)};
   &:hover {
-    background-color: ${theme.getColor("grey", 0.2)};
-    border-bottom: 1px solid ${theme.getColor("grey", 0.5)};
+    background-color: ${theme.getColor("primary", 0.8)};
+    border-bottom: 1px solid ${theme.getColor("grey", 0.4)};
     transition: 0.75s;
   }
 `;

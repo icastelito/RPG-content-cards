@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../styles/theme";
 
 export const Showcase = styled.section`
   display: grid;
@@ -68,7 +69,7 @@ export const SpellDuration = styled.p`
 `;
 
 export const horizontalLine = styled.div`
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: ${theme.getColor("darkGrey", 0.8)};
   height: 3px;
   margin: 0;
   align-self: center;

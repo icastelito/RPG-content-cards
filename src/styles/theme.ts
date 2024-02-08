@@ -16,13 +16,14 @@ export const theme = {
                 grey: 'rgb(196, 196, 196)',
                 darkGrey: 'rgb(52, 52, 52)',
                 black: 'rgb(29, 2, 29)',
-                green: 'RGB(0, 200, 0)',
+                green: 'RGB(60, 150, 60)',
                 blue:'rgb(27, 119, 243)',
                 red: 'rgb(207, 60, 63)',
         } as ColorScheme,
         fonts: {
-                body: 'comic-sans, sans-serif',
+                body: 'Comic-sans',
                 heading: 'system-ui, sans-serif',
+                a: 'Arial, sans-serif',
         },
         fontSizes: {
                 small: '1em',
@@ -55,14 +56,17 @@ export const theme = {
                 place-items: center;
                 min-width: 320px;
                 min-height: 100vh;
+                font-family: ${theme.fonts.body};
           }
 
           a {
                 font-weight: 500;
                 color: ${theme.colors.white};
                 text-decoration: inherit;
+                font-family: ${theme.fonts.a};
               }
               a:hover {
-                color: ${theme.colors.darkGrey};
+                transition: color 0.2s ease;
+                color: ${theme.colors.lightGrey};
               }
         `;
