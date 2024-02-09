@@ -1,10 +1,13 @@
 import * as S from "./Styles.ts";
 import Routes from "./routes/index.tsx";
 import { ThemeProvider } from 'styled-components';
-import {theme, GlobalStyle} from './styles/theme.ts';
+import {GlobalStyle, theme} from './styles/theme.tsx';
 
-const App = () => (
-  <ThemeProvider theme={theme}>
+
+const App = () => {
+
+  return(
+    <ThemeProvider theme={theme}>
     <GlobalStyle />
     <S.Background>
       <S.MainContent>
@@ -12,7 +15,10 @@ const App = () => (
       </S.MainContent>
     </S.Background>
   </ThemeProvider>
-);
+
+  );
+  
+};
 
 
 export default App;
