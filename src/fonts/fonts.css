@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Trajan Pro'; ;
+    src: url(./Trajan\ Pro.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Trajan Pro Bold'; ;
+    src: url(./Trajan\ Pro-Bold.ttf) format('truetype');
+    font-weight: bold;
+}

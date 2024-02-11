@@ -1,29 +1,25 @@
 import styled from "styled-components";
 
-export const Background = styled.body`
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  box-sizing: border-box;
-  width: 100dvw;
-  background-color: #061724;
+export const Container = styled.section`
+  
 `;
 
-export const HeaderContent = styled.header`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #061724;
-  padding: 0;
-`;
-
-export const MainContent = styled.main`
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  background-color: #061724;
-  padding: 10%;
-`;
+export const Button = styled.button`
+    background-color:${(props) => props.theme.getColor("secondary", 0.8)};
+    color: ${(props) => props.theme.colors.white};
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    left: 50px;
+    transition: 0.5s;
+    z-index: 100;
+    &:hover {
+        background-color: ${(props) => props.theme.getColor("secondary", 0.8)};
+        transition: 0.75s;
+    }
+    `;
