@@ -35,7 +35,7 @@ h2 {
 p {
     font-family: ${(props) => props.theme.fonts.a};
     color: ${(props) => props.theme.colors.fontColorStandart};}
-* {
+svg {
     color: ${(props) => props.theme.colors.fontColorStandart};}
   }
 

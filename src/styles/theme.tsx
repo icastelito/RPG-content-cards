@@ -44,9 +44,9 @@ export const lightTheme = {
     green:        "rgb(120, 190, 120)",
     blue:         "rgb(100, 169, 255)",
     red:          "rgb(230, 120, 122)",
-    fontColorStandart: "rgb(25, 25, 25)",
-    fontColorDark: "rgb(50, 50, 50)",
-    fontColorLight: "rgb(10, 10, 10)",
+    fontColorStandart: "rgb(30, 30, 30)",
+    fontColorDark: "rgb(15, 15, 15)",
+    fontColorLight: "rgb(60, 60, 60)",
   } as ColorScheme,
   fonts: {
     body:         "PTSans",
