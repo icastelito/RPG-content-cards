@@ -4,14 +4,14 @@ export const Navibar = styled.nav`
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: ${(props) => props.theme.getColor("primary", 0.8)};
+    background-color: ${(props) => props.theme.getColor("primaryDark", 0.8)};
     height: auto;
     width: 100%;
     position: fixed;
     top: 0;
     justify-content: flex-end;
     align-self: flex-start;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
     right: 0;
 `;
 

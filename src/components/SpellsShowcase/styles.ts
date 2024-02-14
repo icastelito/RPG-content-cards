@@ -7,14 +7,15 @@ export const Showcase = styled.section`
   justify-items: stretch;
   border-radius: 5px;
   align-items: start;
-  width: 100%;
+  width: 80%;
+  margin-top: 50px;
 `;
 
 export const ShowcaseContent = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 300px;
-  background-color: rgba(86, 58, 87, 0.4);
+  background-color: ${(props) => props.theme.getColor("primaryLight", 0.4)};
   border-radius: 1px;
   box-shadow: 0 0 3px #333;
   margin: 10px;
