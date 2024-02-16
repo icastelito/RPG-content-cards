@@ -9,7 +9,7 @@ export const Button = styled.button<{toggled: boolean}>`
   display: inline-block;
   width: 60px;
   height: 34px;
-  background-color: ${props => props.toggled ? props.theme.getColor("secondary", 0.8) : props.theme.getColor("secondary", 0.4)};
+  background-color: ${props => props.theme.getColor("secondary", 0.1)};
   border: none;
   border-radius: 34px;
   cursor: pointer;
@@ -19,6 +19,6 @@ export const Button = styled.button<{toggled: boolean}>`
   transition: background-color 0.5s;
 
   &:hover {
-    background-color: ${props => props.theme.getColor("secondary", 0.8)};
+    background-color: ${props => props.theme.getColor("secondary", 0.3)};
   }
 `;

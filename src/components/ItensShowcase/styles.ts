@@ -13,7 +13,7 @@ export const ShowcaseContent = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 300px;
-  background-color: rgba(86, 58, 87, 0.4);
+  background-color: ${(props) => props.theme.colors.primary};
   border-radius: 1px;
   box-shadow: 0 0 3px #333;
   margin: 10px;
@@ -68,7 +68,7 @@ export const SpellDuration = styled.p`
 `;
 
 export const horizontalLine = styled.div`
-  background-color: ${(props) => props.theme.colors.greySet3};
+  background-color: ${(props) => props.theme.colors.greyLight};
   height: 3px;
   margin: 0;
   align-self: center;

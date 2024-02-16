@@ -19,18 +19,36 @@ export const ContentButtom = styled.a`
   justify-content: center;
   min-height: 20dvh;
   width: 15dvh;
-  background-color: ${(props) => props.theme.colors.primary};
+  background-color: ${(props) => props.theme.colors.primaryDark};
   height: auto;
   padding: 0 20px;
   margin: 10px;
-  border: 3px solid ${(props) => props.theme.colors.greySet3};
+  border: 3px solid ${(props) => props.theme.colors.greyLight};
   border-radius: 10px;
   transition: 0.4s;
+  svg {
+    color: ${(props) => props.theme.colors.fontColorDark};
+    transition: 0.4s;
+  }
+  a {
+    color: ${(props) => props.theme.colors.fontColorDark};
+    transition: 0.4s;
+  }
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.secondary};
+    background-color: ${(props) => props.theme.colors.primaryLight};
     transition: 0.85s;
-    transform: scale(1.03);
-    box-shadow: 0 0 10px 0 ${(props) => props.theme.colors.greySet3};
+    transform: scale(1.05);
+    box-shadow: 0 0 10px 0 ${(props) => props.theme.colors.greyLight};
+    svg {
+      color: ${(props) => props.theme.colors.fontColorLight};
+      transition: 0.85s;
+    transform: scale(1.05);
+    }
+    a {
+      color: ${(props) => props.theme.colors.fontColorLight};
+      transition: 0.85s;
+    transform: scale(1.05);
+    }
   }
 `;

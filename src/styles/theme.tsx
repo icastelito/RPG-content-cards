@@ -8,16 +8,30 @@ export interface ThemeProps {
   theme?: {
     colors: {
       primary: string;
+      primaryLight: string;
+      primaryDark: string;
+      primaryForBackdropBlur: string;
       secondary: string;
+      secondaryLight: string;
+      secondaryDark: string;
       white: string;
-      greySet1: string;
-      greySet2: string;
-      greySet3: string;
-      greySet4: string;
+      whiteLight: string;
+      whiteDark: string;
+      grey: string;
+      greyLight: string;
+      greyDark: string;
       black: string;
+      blackLight: string;
+      blackDark: string;
       green: string;
+      greenLight: string;
+      greenDark: string;
       blue: string;
+      blueLight: string;
+      blueDark: string;
       red: string;
+      redLight: string;
+      redDark: string;
       fontColorStandart: string;
       fontColorDark: string;
       fontColorLight: string;
@@ -31,22 +45,34 @@ export interface ThemeProps {
 
 export const lightTheme = {
   colors: {
-    primary:      "rgb(175, 158, 176)",
-    primaryLight: "rgb(195, 178, 196)",
-    primaryDark:  "rgb(155, 138, 156)",
-    secondary:    "rgb(160, 190, 236)",
-    white:        "rgb(249, 249, 249)",
-    greySet1:     "rgb(236, 236, 236)",
-    greySet2:     "rgb(200, 200, 200)",
-    greySet3:     "rgb(220, 220, 220)",
-    greySet4:     "rgb(128, 128, 128)",
-    black:        "rgb(105, 105, 105)",
-    green:        "rgb(120, 190, 120)",
-    blue:         "rgb(100, 169, 255)",
-    red:          "rgb(230, 120, 122)",
-    fontColorStandart: "rgb(30, 30, 30)",
-    fontColorDark: "rgb(15, 15, 15)",
-    fontColorLight: "rgb(60, 60, 60)",
+    primary:            "rgb(234, 172, 171)",
+    primaryLight:       "rgb(254, 192, 191)",
+    primaryDark:        "rgb(214, 152, 151)",
+    primaryForBackdropBlur: "rgb(207, 119, 117)",
+    secondary:          "rgb(020, 138, 128)",
+    secondaryLight:     "rgb(040, 158, 148)",
+    secondaryDark:      "rgb(000, 118, 108)",
+    white:              "rgb(230, 230, 230)",
+    whiteLight:         "rgb(250, 250, 250)",
+    whiteDark:          "rgb(210, 210, 210)",
+    grey:               "rgb(180, 180, 180)",
+    greyLight:          "rgb(200, 200, 200)",
+    greyDark:           "rgb(160, 160, 160)",
+    black:              "rgb(050, 050, 050)",
+    blackLight:         "rgb(070, 070, 070)",
+    blackDark:          "rgb(030, 030, 030)",
+    green:              "rgb(130, 190, 130)",
+    greenLight:         "rgb(150, 210, 150)",
+    greenDark:          "rgb(110, 170, 110)",
+    blue:               "rgb(137, 207, 240)",
+    blueLight:          "rgb(157, 227, 260)",
+    blueDark:           "rgb(117, 197, 230)",
+    red:                "rgb(235, 105, 097)",
+    redLight:           "rgb(255, 125, 117)",
+    redDark:            "rgb(215, 085, 087)",
+    fontColorStandart:  "rgb(030, 030, 030)",
+    fontColorDark:      "rgb(015, 015, 015)",
+    fontColorLight:     "rgb(060, 060, 060)",
   } as ColorScheme,
   fonts: {
     body:         "PTSans",
@@ -79,19 +105,31 @@ export const lightTheme = {
 
 export const darkTheme = {
   colors: {
-    primary:            "rgb(080, 050, 080)",
-    primaryLight:       "rgb(099, 069, 099)",
-    primaryDark:        "rgb(060, 030, 060)",
-    secondary:          "rgb(098, 138, 206)",
+    primary:            "rgb(104, 058, 123)",
+    primaryLight:       "rgb(114, 068, 133)",
+    primaryDark:        "rgb(094, 048, 113)",
+    primaryForBackdropBlur: "rgb(063, 045, 071)",
+    secondary:          "rgb(141, 198, 063)",
+    secondaryLight:     "rgb(151, 208, 073)",
+    secondaryDark:      "rgb(131, 188, 053)",
     white:              "rgb(200, 200, 200)",
-    greySet1:           "rgb(180, 180, 180)",
-    greySet2:           "rgb(160, 160, 160)",
-    greySet3:           "rgb(100, 100, 100)",
-    greySet4:           "rgb(050, 050, 050)",
-    black:              "rgb(029, 002, 029)",
+    whiteLight:         "rgb(210, 210, 210)",
+    whiteDark:          "rgb(190, 190, 190)",
+    grey:               "rgb(160, 160, 160)",
+    greyLight:          "rgb(170, 170, 170)",
+    greyDark:           "rgb(150, 150, 150)",
+    black:              "rgb(030, 030, 030)",
+    blackLight:         "rgb(040, 040, 040)",
+    blackDark:          "rgb(020, 020, 020)",
     green:              "rgb(060, 150, 060)",
+    greenLight:         "rgb(070, 160, 070)",
+    greenDark:          "rgb(050, 140, 050)",
     blue:               "rgb(027, 119, 243)",
+    blueLight:          "rgb(037, 129, 253)",
+    blueDark:           "rgb(017, 109, 233)",
     red:                "rgb(207, 060, 063)",
+    redLight:           "rgb(217, 070, 073)",
+    redDark:            "rgb(197, 050, 053)",
     fontColorStandart:  "rgb(225, 225, 225)",
     fontColorDark:      "rgb(200, 200, 200)",
     fontColorLight:     "rgb(240, 240, 240)",
