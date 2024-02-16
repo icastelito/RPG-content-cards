@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Showcase = styled.section`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 55px;
+  grid-gap: 30px;
   justify-items: stretch;
   border-radius: 5px;
   align-items: start;
@@ -15,12 +15,12 @@ export const ShowcaseContent = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 300px;
-  background-color: ${(props) => props.theme.getColor("primaryLight", 0.4)};
+  background-color: ${(props) => props.theme.colors.primaryDark};
   border-radius: 1px;
-  box-shadow: 0 0 3px #333;
+  box-shadow: 0 0 3px ${(props) => props.theme.colors.blackLight};
   margin: 10px;
   padding: 10px;
-  color: #f9f9f9;
+  color: ${(props) => props.theme.colors.fontColorStandard};
 `;
 
 export const SpellName = styled.h1`
@@ -37,7 +37,6 @@ export const SpellLevelSchool = styled.h2`
   text-align: center;
   margin: 0;
 `;
-
 
 export const SpellDescription = styled.p`
   font-size: 14px;
@@ -70,7 +69,7 @@ export const SpellDuration = styled.p`
 `;
 
 export const horizontalLine = styled.div`
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: ${(props) => props.theme.getColor("greyLight",0.3)};
   height: 3px;
   margin: 0;
   align-self: center;
