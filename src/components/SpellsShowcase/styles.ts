@@ -17,17 +17,27 @@ export const ShowcaseContent = styled.div`
   min-height: 300px;
   background-color: ${(props) => props.theme.colors.primaryDark};
   border-radius: 1px;
-  box-shadow: 0 0 3px ${(props) => props.theme.colors.blackLight};
+  border: 2px solid ${(props) => props.theme.getColor("black", 0.2)};
+  box-shadow: 0 0 2px ${(props) => props.theme.getColor("black",0.15)};
   margin: 10px;
-  padding: 10px;
   color: ${(props) => props.theme.colors.fontColorStandard};
+  padding: 0 0 10px 0;
 `;
 
 export const SpellName = styled.h1`
   font-size: 24px;
   font-weight: bold;
   text-align: center;
-  margin: 0;
+  margin: 5px 0px 0px 0px;
+  padding: 0 10px 0 10px;
+`;
+
+export const SpellDamage = styled.p`
+  font-size: 14px;
+  text-align: center;
+  font-style: italic;
+  margin: 5px 5px 0px 5px;
+  padding: 0 10px 0 10px;
 `;
 
 export const SpellLevelSchool = styled.h2`
@@ -35,46 +45,67 @@ export const SpellLevelSchool = styled.h2`
   font-style: italic;
   font-weight: bold;
   text-align: center;
-  margin: 0;
+  margin: 5px 5px 0px 5px;
+  padding: 0 10px 0 10px;
 `;
 
 export const SpellDescription = styled.p`
   font-size: 14px;
   text-align: justify;
-  margin: 0;
+  margin: 5px 5px 0px 5px;
+  padding: 0 10px 0 10px;
 `;
 
 export const SpellCastingTime = styled.p`
   font-size: 14px;
   text-align: justify;
-  margin: 0;
+  margin: 5px 5px 0px 5px;
+  padding: 0 10px 0 10px;
 `;
 
 export const SpellRange = styled.p`
   font-size: 14px;
   text-align: justify;
-  margin: 0;
+  margin: 5px 5px 0px 5px;
+  padding: 0 10px 0 10px;
 `;
 
 export const SpellComponents = styled.p`
   font-size: 14px;
   text-align: justify;
-  margin: 0;
+  margin: 5px 5px 0px 5px;
+  padding: 0 10px 0 10px;
 `;
 
 export const SpellDuration = styled.p`
   font-size: 14px;
   text-align: justify;
-  margin: 0;
+  margin: 5px 5px 0px 5px;
+  padding: 0 10px 0 10px;
 `;
 
 export const horizontalLine = styled.div`
-  background-color: ${(props) => props.theme.getColor("greyLight",0.3)};
-  height: 3px;
-  margin: 0;
+  background-color: ${(props) => props.theme.getColor("black",0.25)};
+  height: 2px;
+  margin: 3px;
   align-self: center;
   width: 100%;
+  
 `;
 
+export const SpellConjurer = styled.p`
+  font-size: 14px;
+  text-align: flex-start;
+  margin: 0;
+  margin: 5px 5px 0px 5px;
+  padding: 0 10px 0 10px;
+`;
 
+export const InforHover = styled.a`
+  font-size: 12px;
+  text-align: flex-start;
+  margin: 0;
+  color: ${(props) => props.theme.colors.fontColorStandard};
+  cursor: pointer;
+`;
 

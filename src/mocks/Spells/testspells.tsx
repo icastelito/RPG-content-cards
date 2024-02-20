@@ -2,24 +2,31 @@ export interface SpellProps {
   id: number;
   name: string;
   level: number;
+  conjurer?: string[];
   school: string;
   description: string[];
   castingTime: string;
   range: string;
+  damageResume?: string[];
+  damageType?: string;
   components: string[];
   duration: string;
+  source?: string;
 }
 
 export const spellsTest: SpellProps[] = [
   {
     id: 1,
-    name: "Bola de Fogo",
-    level: 3,
+    name: "Empurrão de Força",
+    level: 0,
+    conjurer: ["Mago"],
     school: "Evocação",
-    description: ["Cria uma esfera de fogo que explode em um ponto escolhido.","Causa dano a todas as criaturas em um raio de 20 pés.","Dano aumenta com o nível do feiticeiro."],
+    damageResume: ["1d6", "2d6", "3d6", "4d6"],
+    damageType: "Energia",
+    description: ["Você realiza um ataque com energia mágica arcana pura, faça um ataque a distância com magia contra o alvo, se atingir, o alvo sofre 1d6 de dano de Energia e precisa realizar um Teste de Resistência de Constituição contra a sua CD de Magia, sendo empurrado 1,5m para trás caso falhe.","O dano dessa magia aumenta em 1d6 quando você alcança o 5º nível (2d6), 11º nível (3d6) e 17º nível (4d6)."],
     castingTime: "1 ação",
-    range: "120 pés",
-    components: ["V", "S", "M (um grão de pimenta)"],
+    range: "9 metros",
+    components: ["V", "S"],
     duration: "Instantânea"
   },
   {
