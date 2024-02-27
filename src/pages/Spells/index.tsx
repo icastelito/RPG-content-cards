@@ -6,12 +6,11 @@ import { HeaderIndex } from "../../components/RouterRender";
 import * as S from "./styles";
 
 const Spells = () => {
-
   const [renderSpells, setRenderSpells] = useState([] as SpellProps[]);
-  
+
   const fetchData = async () => {
     try {
-      const res = await api.get("/spell/");
+      const res = await api.get("/spells/");
       console.log(res.data.data);
 
       if (res.data.data.length > 0) {
@@ -21,27 +20,25 @@ const Spells = () => {
       }
 
       console.log(res.data.data);
-      console.log("@@@ render Spells"+ renderSpells);
+      console.log("@@@ render Spells" + renderSpells);
     } catch (err) {
       console.log(err);
       setRenderSpells(spellsTest);
     }
   };
-  
+
   useEffect(() => {
     fetchData();
   }, []);
-
 
   return (
     <>
       <HeaderIndex />
       {
-      <S.ShowcaseSection>
-        <SpellShowcase spellsList={renderSpells} />
-      </S.ShowcaseSection>
+        <S.ShowcaseSection>
+          <SpellShowcase spellsList={renderSpells} />
+        </S.ShowcaseSection>
       }
-
     </>
   );
 };

@@ -8,7 +8,7 @@ export const Showcase = styled.section`
   border-radius: 5px;
   align-items: start;
   width: 80%;
-  margin-top: 50px;
+  margin: 0 auto;
 `;
 
 export const ShowcaseContent = styled.div`
@@ -17,11 +17,11 @@ export const ShowcaseContent = styled.div`
   min-height: 300px;
   background-color: ${(props) => props.theme.colors.primaryDark};
   border-radius: 1px;
-  border: 2px solid ${(props) => props.theme.getColor("black", 0.2)};
-  box-shadow: 0 0 2px ${(props) => props.theme.getColor("black",0.15)};
+  box-shadow: 0 0 3px ${(props) => props.theme.colors.blackLight};
   margin: 10px;
+  padding: 10px;
   color: ${(props) => props.theme.colors.fontColorStandard};
-  padding: 0 0 10px 0;
+  min-width: 25dvw;
 `;
 
 export const SpellName = styled.h1`
@@ -85,12 +85,11 @@ export const SpellDuration = styled.p`
 `;
 
 export const horizontalLine = styled.div`
-  background-color: ${(props) => props.theme.getColor("black",0.25)};
+  background-color: ${(props) => props.theme.getColor("black", 0.25)};
   height: 2px;
   margin: 3px;
   align-self: center;
   width: 100%;
-  
 `;
 
 export const SpellConjurer = styled.p`
@@ -108,4 +107,3 @@ export const InforHover = styled.a`
   color: ${(props) => props.theme.colors.fontColorStandard};
   cursor: pointer;
 `;
-

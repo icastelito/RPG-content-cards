@@ -8,7 +8,8 @@ export const Showcase = styled.section`
   border-radius: 5px;
   align-items: start;
   width: 80%;
-  margin-top: 50px;
+  margin: 0 auto;
+  top: 0;
 `;
 
 export const ShowcaseContent = styled.div`
@@ -19,8 +20,9 @@ export const ShowcaseContent = styled.div`
   border-radius: 1px;
   box-shadow: 0 0 3px ${(props) => props.theme.colors.blackLight};
   margin: 10px;
-  padding: 10px;
   color: ${(props) => props.theme.colors.fontColorStandard};
+  top: 0;
+  min-width: 25dvw;
 `;
 
 export const ItemName = styled.h1`
@@ -52,15 +54,12 @@ export const ItemPowerIdentity = styled.p`
   margin-top: 5px;
 `;
 
-
 export const ItemDescription = styled.p`
   font-size: 14px;
   text-align: justify;
   margin: 0;
   margin-top: 5px;
 `;
-
-
 
 export const ItemComponents = styled.p`
   font-size: 14px;
@@ -69,15 +68,10 @@ export const ItemComponents = styled.p`
   margin-top: 5px;
 `;
 
-
-
 export const horizontalLine = styled.div`
-  background-color: ${(props) => props.theme.getColor("greyLight",0.3)};
+  background-color: ${(props) => props.theme.getColor("greyLight", 0.3)};
   height: 3px;
   margin: 0;
   align-self: center;
   width: 100%;
 `;
-
-
-
