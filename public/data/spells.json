@@ -1,18 +1,5 @@
 [
 	{
-		"id": 1000,
-		"nome": "Desabrochar da Flor de Fênix",
-		"circulo": 2,
-		"custoPM": 4,
-		"alvo": "Todos os inimigos a até 6 metros",
-		"alcance": "Curto (6m)",
-		"duracao": "Instantânea",
-		"componentes": ["Verbal", "Gestual"],
-		"natureza": ["Prístina", "Bruta"],
-		"conspectos": ["Fogo", "Explosão"],
-		"descricao": "Você invoca uma onda de chamas que explode ao seu redor, queimando tudo em um raio de 6 metros. Cada criatura na área sofre 2d6 de dano de fogo. Uma criatura que passar em um teste de Reflexos sofre metade do dano."
-	},
-	{
 		"id": 1001,
 		"nome": "Selo de Alerta",
 		"circulo": 1,
@@ -22,7 +9,7 @@
 		"duracao": "8 horas",
 		"componentes": ["Verbal", "Gestual", "Canalítico"],
 		"natureza": ["Arcana", "Divina", "Oculta"],
-		"conspectos": ["Proteção", "Encanto", "Revelação", "Runas"],
+		"conspectos": ["Proteção", "Encanto", "Revelação", "Runa"],
 		"descricao": "Você inscreve uma runa invisível em um local específico, ativando um selo mágico que detecta aproximações indesejadas. Escolha uma área de até 3 metros de raio. Sempre que uma criatura atravessar esse espaço, você recebe uma notificação mental se estiver a até 1 km, ou um som audível se estiver próximo. O selo pode ser ajustado para ignorar certos tipos de criaturas (como aliados ou animais). Criaturas invisíveis ainda acionam o alarme."
 	},
 	{
@@ -100,7 +87,20 @@
 		"duracao": "Permanente (até ser desfeito)",
 		"componentes": ["Verbal", "Gestual", "Canalítico"],
 		"natureza": ["Arcana", "Oculta"],
-		"conspectos": ["Proteção", "Ritual", "Controle", "Runas"],
+		"conspectos": ["Proteção", "Ritual", "Controle", "Runa"],
 		"descricao": "Você inscreve um selo mágico sobre um objeto, protegendo-o contra abertura não autorizada. Testes de Arrombamento são necessários para abrir. Reforça fechos físicos e bloqueia destravamentos mágicos simples."
+	},
+	{
+		"id": 1000,
+		"nome": "Desabrochar da Flor de Fênix",
+		"circulo": 2,
+		"custoPM": 4,
+		"alvo": "Todos os inimigos a até 6 metros",
+		"alcance": "Curto (6m)",
+		"duracao": "Instantânea",
+		"componentes": ["Verbal", "Gestual"],
+		"natureza": ["Prístina", "Bruta"],
+		"conspectos": ["Fogo", "Explosão"],
+		"descricao": "Você invoca uma onda de chamas que explode ao seu redor, queimando tudo em um raio de 6 metros. Cada criatura na área sofre 2d6 de dano de fogo. Uma criatura que passar em um teste de Reflexos sofre metade do dano."
 	}
 ]
