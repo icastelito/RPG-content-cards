@@ -26,7 +26,7 @@ export const ShowcaseContent = styled.div`
 	box-shadow: ${(props) => props.theme.shadows.lg};
 	font-family: ${(props) => props.theme.fonts.body};
 	position: relative;
-	width: 90%;
+	width: 100%;
 	background: linear-gradient(
 		135deg,
 		${(props) => props.theme.colors.primary} 00%,
