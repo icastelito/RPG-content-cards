@@ -1,5 +1,44 @@
 [
 	{
+		"id": 1008,
+		"nome": "Lâmina Sagrada",
+		"circulo": 1,
+		"custoPM": 3,
+		"alvo": "Você",
+		"alcance": "Pessoal",
+		"duracao": "Sustentada (até 1 minuto)",
+		"componentes": ["Verbal", "Gestual", "Canalítico"],
+		"natureza": ["Divina", "Bruta"],
+		"conspectos": ["Aço", "Invocação", "Luz"],
+		"descricao": "Você conjura uma arma espiritual de pura energia sagrada que flutua ao seu lado e ataca por sua vontade. A cada rodada, gerando 1 de estresse, você pode ordenar que a lâmina ataque um inimigo a até 6 metros. Ela causa 1d8 de dano mágico (sagrado ou corte à sua escolha) e usa seu modificador de atributo de conjuração para o teste de ataque. Se o dano for de corte, será contra reflexo, se for sagrado, será contra vontade."
+	},
+	{
+		"id": 1009,
+		"nome": "Impulso Mental",
+		"circulo": 1,
+		"custoPM": 2,
+		"alvo": "Uma criatura ou objeto a até 12 metros",
+		"alcance": "Médio (12m)",
+		"duracao": "Instantânea",
+		"componentes": ["Gestual"],
+		"natureza": ["Arcana", "Oculta"],
+		"conspectos": ["Telecinese", "Controle"],
+		"descricao": "Você projeta uma onda de força invisível sobre uma criatura ou objeto. A criatura deve passar em um teste de Reflexos ou será empurrada 3 metros. Objetos leves podem ser arremessados até 6 metros."
+	},
+	{
+		"id": 1000,
+		"nome": "Presságio",
+		"circulo": 1,
+		"custoPM": 4,
+		"alvo": "Você",
+		"alcance": "Pessoal",
+		"duracao": "Instantânea",
+		"componentes": ["Verbal", "Gestual", "Canalítico"],
+		"natureza": ["Divina", "Oculta"],
+		"conspectos": ["Revelação", "Destino", "Intuição"],
+		"descricao": "Você realiza uma leitura simbólica dos fios do destino e recebe uma resposta sobre um evento futuro iminente. Pode perguntar ao Narrador se uma ação específica resultará em bem, mal, ambos ou nada. A resposta será simbólica e subjetiva."
+	},
+	{
 		"id": 1001,
 		"nome": "Selo de Alerta",
 		"circulo": 1,
@@ -90,17 +129,83 @@
 		"conspectos": ["Proteção", "Ritual", "Controle", "Runa"],
 		"descricao": "Você inscreve um selo mágico sobre um objeto, protegendo-o contra abertura não autorizada. Testes de Arrombamento são necessários para abrir. Reforça fechos físicos e bloqueia destravamentos mágicos simples."
 	},
+
 	{
-		"id": 1000,
-		"nome": "Desabrochar da Flor de Fênix",
-		"circulo": 2,
-		"custoPM": 4,
-		"alvo": "Todos os inimigos a até 6 metros",
+		"id": 1013,
+		"nome": "Barreira Arcana",
+		"circulo": 1,
+		"custoPM": 2,
+		"alvo": "Você mesmo",
+		"alcance": "Pessoal",
+		"duracao": "Uma rodada (até o início do seu próximo turno)",
+		"componentes": ["Verbal", "Gestual"],
+		"natureza": ["Arcana"],
+		"conspectos": ["Proteção"],
+		"descricao": "Cria uma barreira invisível que concede +5 de bônus em uma perícia contra ataques até o início do seu próximo turno, incluindo contra o ataque que ativou a magia. Também anula o dano de projéteis mágicos que o atinjam durante esse efeito."
+	},
+	{
+		"id": 1010,
+		"nome": "Luz Mágica",
+		"circulo": 1,
+		"custoPM": 1,
+		"alvo": "Um objeto pequeno ou uma criatura",
+		"alcance": "Toque",
+		"duracao": "1 hora",
+		"componentes": ["Verbal", "Gestual"],
+		"natureza": ["Arcana"],
+		"conspectos": ["Luz", "Encanto"],
+		"descricao": "Você imbuí um objeto ou criatura com luz mágica, iluminando uma área de 6 metros de raio. A luz é visível a até 18 metros e pode ser apagada com um comando verbal."
+	},
+	{
+		"id": 1011,
+		"nome": "Compreensão de Linguagens",
+		"circulo": 1,
+		"custoPM": 2,
+		"alvo": "Você",
+		"alcance": "Pessoal",
+		"duracao": "1 hora",
+		"componentes": ["Verbal", "Gestual"],
+		"natureza": ["Arcana", "Oculta"],
+		"conspectos": ["Revelação"],
+		"descricao": "Você é capaz de compreender as ideias e sentimentos expressos em qualquer língua, mas não pode falar ou escrever em línguas que não conhece."
+	},
+	{
+		"id": 1012,
+		"nome": "Asas de Luz - Proteção",
+		"circulo": 1,
+		"custoPM": 2,
+		"alvo": "Você",
+		"alcance": "Pessoal",
+		"duracao": "1 rodada (até o início do seu próximo turno)",
+		"componentes": ["Verbal", "Gestual"],
+		"natureza": ["Divina"],
+		"conspectos": ["Proteção", "Luz"],
+		"descricao": "Você cria asas de luz que o envolvem, concedendo +2 de bônus em CA e resistência a dano mágico até o início do seu próximo turno."
+	},
+	{
+		"id": 1015,
+		"nome": "Leque de Chamas",
+		"circulo": 1,
+		"custoPM": 2,
+		"alvo": "Área em leque de 6 metros",
 		"alcance": "Curto (6m)",
 		"duracao": "Instantânea",
 		"componentes": ["Verbal", "Gestual"],
 		"natureza": ["Prístina", "Bruta"],
 		"conspectos": ["Fogo", "Explosão"],
-		"descricao": "Você invoca uma onda de chamas que explode ao seu redor, queimando tudo em um raio de 6 metros. Cada criatura na área sofre 2d6 de dano de fogo. Uma criatura que passar em um teste de Reflexos sofre metade do dano."
+		"descricao": "Você cria um leque de chamas que se expande em 6 metros, causando 3d6 de dano de fogo a todas as criaturas na área. Um teste de Reflexos ou Fortitude bem sucedido reduz o dano pela metade."
+	},
+	{
+		"id": 1014,
+		"nome": "Bolha Ácida",
+		"circulo": 1,
+		"custoPM": 3,
+		"alvo": "Área circular de 3 metros de raio",
+		"alcance": "Curto (6m)",
+		"duracao": "Instantânea",
+		"componentes": ["Verbal", "Gestual"],
+		"natureza": ["Prístina", "Bruta"],
+		"conspectos": ["Ácido", "Explosão", "Terra"],
+		"descricao": "Você cria uma bolha ácida que explode em uma área circular de 3 metros de raio, causando 2d6 de dano ácido a todas as criaturas na área. Um teste de Reflexos ou Fortitude bem sucedido reduz o dano pela metade."
 	}
 ]
