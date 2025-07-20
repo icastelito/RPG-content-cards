@@ -1,13 +1,14 @@
-
-import { MainContentIndex, HeaderIndex } from '../../components/RouterRender/index.tsx';
+import { MainContentIndex, HeaderIndex } from "../../components/RouterRender/index.tsx";
+import * as S from "./styles";
 const HomePage = () => {
-  return (
-    <div>
-        <HeaderIndex />
-         <MainContentIndex />
-      
-    </div>
-  );
+	return (
+		<>
+			<HeaderIndex />
+			<S.ShowcaseSection>
+				<MainContentIndex />
+			</S.ShowcaseSection>
+		</>
+	);
 };
 
 export default HomePage;

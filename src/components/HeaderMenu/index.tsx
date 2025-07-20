@@ -1,38 +1,35 @@
 import * as S from "./styles";
 import { menuNavigationProps } from "../../utils";
 import { useNavigate } from "react-router-dom";
+import { useTheme } from "../../App";
+import RenderIcon from "../IconRender";
 
 interface HeaderMenuProps {
-  navigationItems: menuNavigationProps[];
+	navigationItems: menuNavigationProps[];
 }
 
-const HeaderMenuNavigation: React.FC<HeaderMenuProps> = ({
-  navigationItems,
-}) => {
-  const navigate = useNavigate();
+const HeaderMenuNavigation: React.FC<HeaderMenuProps> = ({ navigationItems }) => {
+	const navigate = useNavigate();
+	const { toggleTheme, iconName } = useTheme();
 
-  const handleCardClick = (way: string) => {
-    navigate(way);
-  };
+	const handleCardClick = (way: string) => {
+		navigate(way);
+	};
 
-  return (
-    <S.Navibar>
-      {navigationItems.map((item) => (
-        <div key={item.name}>
-          <S.Listed onClick={() => handleCardClick(item.path)}>
-            {item.name}
-          </S.Listed>
-        </div>
-      ))}
-    </S.Navibar>
-  );
+	return (
+		<S.Navbar>
+			<S.ThemeToggle onClick={toggleTheme}>
+				<RenderIcon iconName={iconName} />
+			</S.ThemeToggle>
+			<S.NavItems>
+				{navigationItems.map((item) => (
+					<S.Listed key={item.name} onClick={() => handleCardClick(item.path)}>
+						{item.name}
+					</S.Listed>
+				))}
+			</S.NavItems>
+		</S.Navbar>
+	);
 };
-
-
-
-
-
-
-
 
 export default HeaderMenuNavigation;

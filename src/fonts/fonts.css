@@ -1,27 +1,30 @@
 @font-face {
-    font-family: 'Trajan Pro'; ;
-    src: url(./Trajan\ Pro.ttf) format('truetype');
+	font-family: "Trajan Pro";
+	src: url(./Trajan\ Pro.ttf) format("truetype");
 }
 
 @font-face {
-    font-family: 'Trajan Pro Bold'; ;
-    src: url(./Trajan\ Pro-Bold.ttf) format('truetype');
-    font-weight: bold;
+	font-family: "Trajan Pro Bold";
+	src: url(./Trajan\ Pro-Bold.ttf) format("truetype");
+	font-weight: bold;
 }
 
 @font-face {
-    font-family: 'PTSans';
-    src: url(./PTSans-Regular.ttf) format('truetype');
+	font-family: "PTSans";
+	src: url(./PTSans-Regular.ttf) format("truetype");
 }
 
 @font-face {
-    font-family: 'PTSansBold';
-    src: url(./PTSans-Bold.ttf) format('truetype');
-    font-weight: bold;
+	font-family: "PTSansBold";
+	src: url(./PTSans-Bold.ttf) format("truetype");
+	font-weight: bold;
 }
 
 @font-face {
-    font-family: 'PTSansItalic';
-    src: url(./PTSans-Italic.ttf) format('truetype');
-    font-style: italic;
+	font-family: "PTSansItalic";
+	src: url(./PTSans-Italic.ttf) format("truetype");
+	font-style: italic;
 }
+
+/* Importando fonte Source Serif Pro do Google Fonts para melhor compatibilidade */
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400&display=swap");

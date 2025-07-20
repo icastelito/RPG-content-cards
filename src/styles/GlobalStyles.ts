@@ -1,18 +1,33 @@
 import { createGlobalStyle } from "styled-components";
 import { ThemeProps } from "./theme";
 
-
-
 export const GlobalStyle = createGlobalStyle<ThemeProps>`
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    place-items: center;
-    min-width: 320px;
-    min-height: 100vh;
-    justify-content: center;
-    background-color: ${(props) => props.theme.colors.primary};
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, ${(props) => props.theme.colors.primary} 0%, ${(props) =>
+	props.theme.colors.primaryLight} 100%);
+  font-family: ${(props) => props.theme.fonts.body}, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  color: ${(props) => props.theme.colors.fontColorStandart};
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
 }
 
 a {

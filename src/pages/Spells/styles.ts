@@ -1,14 +1,20 @@
 import styled from "styled-components";
 
 export const ShowcaseSection = styled.section`
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin-top: 15dvh;
+	width: 100%;
+	min-height: 100vh;
+	padding-top: 100px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+
+	@media (max-width: 768px) {
+		padding-top: 90px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
 `;
