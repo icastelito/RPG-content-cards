@@ -23,11 +23,29 @@ export const useTheme = () => {
 };
 
 const App = () => {
-	const [theme, setTheme] = useState("light");
+	// Função para obter o tema inicial do localStorage ou usar 'light' como padrão
+	const getInitialTheme = () => {
+		try {
+			const savedTheme = localStorage.getItem("theme");
+			return savedTheme === "dark" || savedTheme === "light" ? savedTheme : "light";
+		} catch (error) {
+			console.warn("Erro ao acessar localStorage:", error);
+			return "light";
+		}
+	};
+
+	const [theme, setTheme] = useState(getInitialTheme);
 	const [iconName, setIconName] = useState("FaSun");
 
 	useEffect(() => {
 		setIconName(theme === "dark" ? "FaMoon" : "FaSun");
+
+		// Salvar o tema no localStorage sempre que ele mudar
+		try {
+			localStorage.setItem("theme", theme);
+		} catch (error) {
+			console.warn("Erro ao salvar tema no localStorage:", error);
+		}
 	}, [theme]);
 
 	const toggleTheme = () => {
