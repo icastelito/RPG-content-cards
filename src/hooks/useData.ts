@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import dataService from "../services/dataService";
-import { Magia, SpellProps } from "../mocks/Spells/testspells";
-import { ItensProps } from "../mocks/Items/testitens";
+import { dataService } from "../services/dataService";
+import { Magia, SpellProps, ItensProps } from "../types";
 
 // Hook para buscar magias (nova estrutura)
 export const useMagias = () => {

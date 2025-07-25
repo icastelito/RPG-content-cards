@@ -1,10 +1,9 @@
 import { useMagias } from "./useData";
-import { novasMagias } from "../mocks/Spells/testspells";
 
 export const useSpellFilterOptions = () => {
 	const { magias, loading, error } = useMagias();
 
-	const allMagias = magias.length > 0 ? magias : novasMagias;
+	const allMagias = magias;
 
 	// Extrair naturezas únicas
 	const naturezasSet = new Set<string>();

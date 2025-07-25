@@ -3,15 +3,10 @@ import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./styles/theme.tsx";
 import { GlobalStyle } from "./styles/GlobalStyles.ts";
 import { useEffect, useState, createContext, useContext } from "react";
+import { ThemeContextType } from "./types/context";
 import * as S from "./Styles.ts";
 
 // Context para o tema
-interface ThemeContextType {
-	theme: string;
-	toggleTheme: () => void;
-	iconName: string;
-}
-
 export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const useTheme = () => {

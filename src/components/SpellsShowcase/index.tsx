@@ -1,9 +1,5 @@
 import * as S from "./styles";
-import { SpellProps } from "../../mocks/Spells/testspells";
-
-interface SpellShowcaseProps {
-	spellsList: SpellProps[];
-}
+import { SpellShowcaseProps } from "../../types";
 
 const SpellShowcase: React.FC<SpellShowcaseProps> = ({ spellsList }) => (
 	<S.Showcase>

@@ -1,9 +1,5 @@
 import * as S from "./styles";
-import { Magia } from "../../mocks/Spells/testspells";
-
-interface MagiaShowcaseProps {
-	magiasList: Magia[];
-}
+import { MagiaShowcaseProps } from "../../types";
 
 const MagiaShowcase: React.FC<MagiaShowcaseProps> = ({ magiasList }) => (
 	<S.Showcase>

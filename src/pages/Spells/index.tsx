@@ -2,7 +2,7 @@ import { useState } from "react";
 import MagiaShowcase from "../../components/MagiaShowcase";
 import SpellFilters from "../../components/SpellFilters";
 import { useMagias } from "../../hooks/useData";
-import { novasMagias, Magia } from "../../mocks/Spells/testspells";
+import { Magia } from "../../types/spell";
 import { HeaderIndex } from "../../components/RouterRender";
 import * as S from "./styles";
 
@@ -26,13 +26,18 @@ const Spells = () => {
 	}
 
 	if (error) {
-		console.error("Erro ao carregar magias, usando dados de teste:", error);
+		return (
+			<>
+				<HeaderIndex />
+				<S.ShowcaseSection>
+					<div>Erro ao carregar magias: {error}</div>
+				</S.ShowcaseSection>
+			</>
+		);
 	}
 
-	const allMagias = magias.length > 0 ? magias : novasMagias;
-
 	// Função para filtrar magias
-	const filteredMagias = allMagias.filter((magia: Magia) => {
+	const filteredMagias = magias.filter((magia: Magia) => {
 		// Filtro por nome
 		const nameMatch = magia.nome.toLowerCase().includes(searchTerm.toLowerCase());
 
@@ -82,7 +87,7 @@ const Spells = () => {
 				/>
 
 				<S.ResultsInfo>
-					Mostrando {filteredMagias.length} de {allMagias.length} magias
+					Mostrando {filteredMagias.length} de {magias.length} magias
 				</S.ResultsInfo>
 
 				<MagiaShowcase magiasList={filteredMagias} />

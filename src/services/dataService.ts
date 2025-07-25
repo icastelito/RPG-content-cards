@@ -1,5 +1,5 @@
-import { Magia, SpellProps } from "../mocks/Spells/testspells";
-import { ItensProps } from "../mocks/Items/testitens";
+import { Magia, SpellProps } from "../types";
+import { ItensProps } from "../types";
 
 // Base URL para os arquivos JSON locais
 const BASE_URL = "/data";

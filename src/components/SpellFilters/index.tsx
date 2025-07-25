@@ -1,20 +1,7 @@
 import React from "react";
 import * as S from "./styles";
 import { useSpellFilterOptions } from "../../hooks/useSpellFilterOptions";
-
-interface SpellFiltersProps {
-	searchTerm: string;
-	onSearchChange: (value: string) => void;
-	selectedCirculo: string;
-	onCirculoChange: (value: string) => void;
-	selectedCusto: string;
-	onCustoChange: (value: string) => void;
-	selectedNatureza: string;
-	onNaturezaChange: (value: string) => void;
-	selectedConspecto: string;
-	onConspectoChange: (value: string) => void;
-	onClearFilters: () => void;
-}
+import { SpellFiltersProps } from "../../types";
 
 const SpellFilters: React.FC<SpellFiltersProps> = ({
 	searchTerm,
