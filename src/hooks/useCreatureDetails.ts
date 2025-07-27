@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Creature, Actions, Ability, Magia } from "../types";
+import { Creature, Actions, Ability, Magia, ItensProps } from "../types";
 import { dataService } from "../services/dataService";
 
 export interface CreatureWithDetails extends Creature {
@@ -9,6 +9,7 @@ export interface CreatureWithDetails extends Creature {
 	resolvedLegendaryActions?: Actions[];
 	resolvedLairActions?: Actions[];
 	resolvedSpells?: Magia[];
+	resolvedItems?: ItensProps[];
 }
 
 export const useCreatureDetails = (creatureId: number | null) => {
@@ -57,6 +58,11 @@ export const useCreatureDetails = (creatureId: number | null) => {
 					? await dataService.getMagiasByIds(baseCreature.spells)
 					: undefined;
 
+				// Resolver items (se existir)
+				const resolvedItems = baseCreature.itens
+					? await dataService.getItemsByIds(baseCreature.itens)
+					: undefined;
+
 				// Criar objeto com dados resolvidos
 				const creatureWithDetails: CreatureWithDetails = {
 					...baseCreature,
@@ -66,6 +72,7 @@ export const useCreatureDetails = (creatureId: number | null) => {
 					resolvedLegendaryActions,
 					resolvedLairActions,
 					resolvedSpells,
+					resolvedItems,
 				};
 
 				setCreature(creatureWithDetails);

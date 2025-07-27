@@ -14,7 +14,9 @@ const CreaturesList: React.FC<CreatureListProps> = ({ creatures }) => {
 			{creatures.map((creature) => (
 				<S.CreatureItem key={creature.id} onClick={() => handleCreatureClick(creature.id)}>
 					<S.CreatureImageContainer>
-						{creature.imageMini && <S.CreatureImage src={creature.imageMini} alt={creature.name} />}
+						{creature.imageMini && (
+							<S.CreatureImage src={`/img/mini/${creature.imageMini}`} alt={creature.name} />
+						)}
 					</S.CreatureImageContainer>
 
 					<S.CreatureInfo>
@@ -27,8 +29,38 @@ const CreaturesList: React.FC<CreatureListProps> = ({ creatures }) => {
 
 						<S.CreatureStats>
 							<S.StatItem>Nível: {creature.level}</S.StatItem>
-							<S.StatItem>HP: {creature.hp}</S.StatItem>
-							<S.StatItem>MP: {creature.mp}</S.StatItem>
+							<S.StatItem>
+								HP:{" "}
+								{Math.floor(
+									creature.hp +
+										(creature.streng - 10) / 2 +
+										(creature.agility - 10) / 2 +
+										(creature.precision - 10) / 2
+								)}
+							</S.StatItem>
+							<S.StatItem>
+								MP:{" "}
+								{Math.floor(
+									creature.mp +
+										(creature.intelligence - 10) / 2 +
+										(creature.wisdom - 10) / 2 +
+										(creature.charisma - 10) / 2
+								)}
+							</S.StatItem>
+							<S.StatItem>
+								SP:{" "}
+								{Math.floor(
+									creature.sp +
+										(creature.intelligence - 10) / 2 +
+										(creature.wisdom - 10) / 2 +
+										(creature.charisma - 10) / 2 +
+										(creature.streng - 10) / 2 +
+										(creature.agility - 10) / 2 +
+										(creature.precision - 10) / 2 +
+										creature.level / 5 +
+										1
+								)}
+							</S.StatItem>
 						</S.CreatureStats>
 					</S.CreatureInfo>
 				</S.CreatureItem>

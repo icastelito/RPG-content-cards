@@ -281,6 +281,17 @@ export const dataService = {
 			throw error;
 		}
 	},
+
+	// Buscar itens por IDs (array)
+	async getItemsByIds(ids: number[]): Promise<ItensProps[]> {
+		try {
+			const items = await this.getItems();
+			return items.filter((item) => ids.includes(item.id));
+		} catch (error) {
+			console.error("Erro ao buscar itens por IDs:", error);
+			throw error;
+		}
+	},
 };
 
 export default dataService;

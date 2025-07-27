@@ -34,16 +34,3 @@ export interface Skills {
 	tecnologia: boolean;
 	vontade: boolean;
 }
-
-
-Inteligência: História, Ocultismo, Nobreza, Religião, Guerra, Arcanismo, Medicina, Biologia, Tecnologia, Investigação.
-
-Sabedoria: Intuição, Percepção, Sobrevivência, Natureza, Vontade, Sacerdócio, Misticismo, Curanderia.
-
-Força: Atletismo, Fortitude, Ameaçar, Demolição.
-
-Agilidade: Acrobacia, Furtividade, Pilotagem, Reflexos.
-
-Precisão: Manuseio, Ladinagem, Pontaria, Desarme.
-
-Carisma: Charme, Diplomacia, Enganação, Atuação, Intimidação, Presença.

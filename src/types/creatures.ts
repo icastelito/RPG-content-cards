@@ -29,8 +29,9 @@ export interface Creature {
 	image?: string;
 	imageMini?: string;
 	skills?: Skills;
+	itens?: number[];
+	trainings: string[];
 }
-
 // Interface para habilidades separadas
 export interface Ability {
 	id: number;

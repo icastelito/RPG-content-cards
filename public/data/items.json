@@ -1,50 +1,79 @@
 [
 	{
 		"id": 1,
+		"name": "Adaga Envenenada",
+		"attunement": false,
+		"type": "Arma",
+		"subtype": "Adaga",
+		"rarity": "Comum",
+		"animaIdentity": ["Intentum"],
+		"description": [
+			"Uma adaga com lâmina revestida de veneno. Ideal para ataques furtivos e assassinatos silenciosos."
+		],
+		"price": 150,
+		"magic": false,
+		"damage": "1d4",
+		"damageType": "Perfurante + Veneno",
+		"category": "Adagas",
+		"properties": ["Arremesso", "Sutil", "Veneno"],
+		"range": "Corpo a corpo / 6m/18m",
+		"weight": 1,
+		"attackAttribute": "precision",
+		"targetSkill": "desarme"
+	},
+	{
+		"id": 2,
+		"name": "Espada Curta Élfica",
+		"attunement": false,
+		"type": "Arma",
+		"subtype": "Espada Curta",
+		"rarity": "Incomum",
+		"animaIdentity": ["Égote"],
+		"description": [
+			"Uma espada curta forjada pelos elfos, com lâmina curvada e empunhadura decorada. Muito equilibrada e precisa."
+		],
+		"price": 300,
+		"magic": false,
+		"damage": "1d6",
+		"damageType": "Cortante",
+		"category": "Espadas Curtas",
+		"properties": ["Sutil", "Equilibrada"],
+		"range": "Corpo a corpo",
+		"weight": 2,
+		"attackAttribute": "precision",
+		"targetSkill": "manuseio"
+	},
+	{
+		"id": 3,
+		"name": "Armadura de Couro Reforçado",
+		"attunement": false,
+		"type": "Armadura",
+		"subtype": "Armadura Leve",
+		"rarity": "Comum",
+		"animaIdentity": ["Neutro"],
+		"description": [
+			"Armadura feita de couro resistente com reforços de metal. Oferece proteção sem comprometer a mobilidade."
+		],
+		"price": 200,
+		"magic": false,
+		"damageMitigationMinor": 2,
+		"damageMitigationMajor": 1,
+		"effects": ["Não penaliza furtividade"],
+		"category": "Armadura Leve",
+		"armorPoints": 12
+	},
+	{
+		"id": 4,
 		"name": "Lingua de Dragão",
 		"attunement": true,
 		"type": "Pergaminho",
 		"subtype": "Magia",
 		"rarity": "Comum",
-		"powerIdentity": ["Neutro 1"],
-		"description": ["Um pergaminho que quando lido garante um bônus de +1 em testes de Intimidação."]
-	},
-	{
-		"id": 2,
-		"name": "Armadura Gélida de Agathys",
-		"attunement": true,
-		"type": "Armadura",
-		"subtype": "Brunea",
-		"rarity": "Raro",
-		"powerIdentity": ["Logos 3"],
-		"description": [
-			"Essa armadura garante 18 de CA e não adiciona modificadores de defesa.",
-			"Você ganha resistência a dano Igneo e imunidade a dano Gélido.",
-			"Quando rolar iniciativa, você conjura a magia Armadura de Agathys automaticamente, e sempre no início do seu turno, você pode rolar 1d8, a magia é reconjurada caso o resultado seja 8. Você ainda pode usar um espaço de magia para conjurar essa magia."
-		]
-	},
-	{
-		"id": 3,
-		"name": "Espada Flamejante",
-		"attunement": true,
-		"type": "Arma",
-		"subtype": "Espada Longa",
-		"rarity": "Raro",
-		"powerIdentity": ["Pathos 2"],
-		"description": [
-			"Esta espada mágica causa +1d6 de dano ígneo em cada ataque.",
-			"Como ação bônus, você pode ativar as chamas por 1 minuto, causando +2d6 de dano ígneo adicional."
-		]
-	},
-	{
-		"id": 4,
-		"name": "Anel de Proteção",
-		"attunement": true,
-		"type": "Acessório",
-		"subtype": "Anel",
-		"rarity": "Incomum",
-		"powerIdentity": ["Logos 1"],
-		"description": ["Você ganha +1 de bônus em CA e testes de resistência enquanto usar este anel."]
+		"animaIdentity": ["Neutro"],
+		"description": ["Um pergaminho que quando lido garante um bônus de +1 em testes de Intimidação."],
+		"price": 50,
+		"magic": true,
+		"magicalEffects": ["+1 Intimidação por 1 hora"]
 	},
 	{
 		"id": 5,
@@ -53,10 +82,38 @@
 		"type": "Consumível",
 		"subtype": "Poção",
 		"rarity": "Incomum",
-		"powerIdentity": ["Neutro"],
+		"animaIdentity": ["Neutro"],
 		"description": [
 			"Você recupera 8d4 + 8 pontos de vida quando bebe esta poção.",
 			"Beber ou administrar uma poção requer uma ação."
-		]
+		],
+		"price": 400,
+		"magic": true,
+		"effects": ["Cura 8d4+8 PV"],
+		"consumableType": "Poção",
+		"duration": "Instantâneo",
+		"uses": 1
+	},
+	{
+		"id": 6,
+		"name": "Arco Curto Composto",
+		"attunement": false,
+		"type": "Arma",
+		"subtype": "Arco",
+		"rarity": "Comum",
+		"animaIdentity": ["Neutro"],
+		"description": [
+			"Um arco curto feito de madeira laminada e tendão. Ideal para combate à distância em espaços apertados."
+		],
+		"price": 180,
+		"magic": false,
+		"damage": "1d6",
+		"damageType": "Perfurante",
+		"category": "Arcos",
+		"properties": ["Duas Mãos", "Munição"],
+		"range": "45m/180m",
+		"weight": 2,
+		"attackAttribute": "precision",
+		"targetSkill": "pontaria"
 	}
 ]

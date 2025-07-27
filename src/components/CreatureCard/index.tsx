@@ -3,6 +3,7 @@ import { useCreatureDetails } from "../../hooks/useCreatureDetails";
 import * as S from "./styles";
 import { useState } from "react";
 import IconRender from "../IconRender";
+import EquipmentSection from "../EquipmentSection";
 
 type SortType = "alphabetical" | "attribute" | "trained";
 
@@ -106,7 +107,7 @@ const CreatureCard: React.FC<CreatureCardProps> = ({ creature }) => {
 		const attributeModifier = Math.floor((attributeValue - 10) / 2);
 
 		// Bônus base pelo nível (level / 5 arredondado para baixo) - apenas se treinado
-		const levelBonus = trained ? Math.floor(detailedCreature.level / 5) : 0;
+		const levelBonus = trained ? Math.floor(detailedCreature.level / 5) + 1 : 0;
 
 		// Retorna o modificador do atributo + bônus de nível (se treinado)
 		return attributeModifier + levelBonus;
@@ -224,7 +225,10 @@ const CreatureCard: React.FC<CreatureCardProps> = ({ creature }) => {
 					<S.CreatureHeader>
 						<S.CreatureImageContainer>
 							{detailedCreature.image && (
-								<S.CreatureImage src={detailedCreature.image} alt={detailedCreature.name} />
+								<S.CreatureImage
+									src={`/img/regular/${detailedCreature.image}`}
+									alt={detailedCreature.name}
+								/>
 							)}
 						</S.CreatureImageContainer>
 
@@ -251,7 +255,7 @@ const CreatureCard: React.FC<CreatureCardProps> = ({ creature }) => {
 								</S.AttributeValue>
 							</S.AttributeItem>
 							<S.AttributeItem>
-								<S.AttributeLabel>DES:</S.AttributeLabel>
+								<S.AttributeLabel>PRE:</S.AttributeLabel>
 								<S.AttributeValue>
 									{detailedCreature.precision} ({Math.floor((detailedCreature.precision - 10) / 2)}){" "}
 								</S.AttributeValue>
@@ -463,8 +467,25 @@ const CreatureCard: React.FC<CreatureCardProps> = ({ creature }) => {
 				</S.CreatureCard>
 			</S.MainContent>
 
-			{/* Equipment Column - Placeholder for future implementation */}
-			<div style={{ width: "250px" }}>{/* Equipment will be added here later */}</div>
+			{/* Equipment Column */}
+			<S.EquipmentColumn>
+				{detailedCreature.resolvedItems && detailedCreature.resolvedItems.length > 0 ? (
+					<EquipmentSection
+						items={detailedCreature.resolvedItems}
+						trainings={detailedCreature.trainings || []}
+						creatureAttributes={{
+							streng: detailedCreature.streng,
+							agility: detailedCreature.agility,
+							precision: detailedCreature.precision,
+							intelligence: detailedCreature.intelligence,
+							wisdom: detailedCreature.wisdom,
+							charisma: detailedCreature.charisma,
+						}}
+					/>
+				) : (
+					<div style={{ padding: "16px", textAlign: "center", color: "#999" }}>Nenhum equipamento</div>
+				)}
+			</S.EquipmentColumn>
 		</S.CreatureLayout>
 	);
 };
