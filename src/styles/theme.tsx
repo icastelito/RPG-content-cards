@@ -95,9 +95,9 @@ export const lightTheme = {
 		primaryForBackdropBlur: "rgb(248, 250, 252)", // Mesmo que primary
 
 		// Cores secundárias - roxo vibrante para acentos
-		secondary: "rgb(109, 40, 174)", // Roxo principal mais escuro
-		secondaryLight: "rgb(139, 69, 195)", // Roxo médio
-		secondaryDark: "rgb(88, 28, 135)", // Roxo muito escuro
+		secondary: "rgba(153, 127, 179, 1)", // Roxo principal mais escuro
+		secondaryLight: "rgba(169, 146, 187, 1)", // Roxo médio
+		secondaryDark: "rgba(118, 101, 131, 1)", // Roxo muito escuro
 
 		// Escala de cinzas neutra
 		white: "rgb(255, 255, 255)", // Branco puro

@@ -1,7 +1,7 @@
 import * as S from "./styles";
 import { HeaderMenuProps } from "../../types";
 import { useNavigate } from "react-router-dom";
-import { useTheme } from "../../App";
+import { useTheme } from "../../hooks/useTheme";
 import RenderIcon from "../IconRender";
 
 const HeaderMenuNavigation: React.FC<HeaderMenuProps> = ({ navigationItems }) => {

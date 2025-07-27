@@ -1,0 +1,85 @@
+[
+	{
+		"id": 1,
+		"name": "Ataque com Adaga",
+		"description": "O goblin ataca com uma adaga envenenada.",
+		"type": "Ataque",
+		"effects": ["1d6+2 de dano perfurante", "Possível envenenamento"],
+		"stressCost": 1
+	},
+	{
+		"id": 2,
+		"name": "Emboscada",
+		"description": "O goblin se esconde e prepara um ataque surpresa.",
+		"type": "Habilidade",
+		"effects": ["Próximo ataque tem vantagem", "Dano adicional de 1d6"],
+		"stressCost": 3
+	},
+	{
+		"id": 3,
+		"name": "Esquiva Ágil",
+		"description": "Quando atacado, o goblin tenta se esquivar.",
+		"type": "Reação",
+		"effects": ["+2 na Defesa contra o próximo ataque"],
+		"stressCost": 2
+	},
+	{
+		"id": 4,
+		"name": "Mordida Sombria",
+		"description": "Uma mordida imbuída com energia sombria.",
+		"type": "Ataque",
+		"effects": ["2d6+3 de dano perfurante", "1d4 de dano sombrio", "Alvo deve resistir ou ficar amedrontado"],
+		"stressCost": 2
+	},
+	{
+		"id": 5,
+		"name": "Uivo Aterrorizante",
+		"description": "Um uivo que instila medo nos corações dos inimigos.",
+		"type": "Habilidade",
+		"effects": ["Todos os inimigos num raio de 9m devem resistir ou ficar amedrontados por 2 turnos"],
+		"manaCost": 5,
+		"stressCost": 4
+	},
+	{
+		"id": 6,
+		"name": "Desvanecer",
+		"description": "O lobo se torna parcialmente etéreo para evitar ataques.",
+		"type": "Reação",
+		"effects": ["Reduz o dano recebido pela metade"],
+		"manaCost": 3
+	},
+	{
+		"id": 7,
+		"name": "Raio Sombrio",
+		"description": "Dispara um raio de energia sombria.",
+		"type": "Magia",
+		"effects": ["3d6 de dano sombrio", "Alcance de 18m"],
+		"manaCost": 8
+	},
+	{
+		"id": 8,
+		"name": "Drenar Energia",
+		"description": "Drena a força vital do alvo.",
+		"type": "Magia",
+		"effects": ["2d8 de dano necrótico", "Recupera PM igual ao dano causado"],
+		"manaCost": 12,
+		"stressCost": 3
+	},
+	{
+		"id": 9,
+		"name": "Escudo Arcano",
+		"description": "Conjura um escudo mágico protetor.",
+		"type": "Magia",
+		"effects": ["+4 na Defesa contra o próximo ataque"],
+		"manaCost": 6
+	},
+	{
+		"id": 10,
+		"name": "Teletransporte",
+		"description": "Se teletransporta para qualquer local visível.",
+		"type": "Magia",
+		"effects": ["Move-se instantaneamente até 18m"],
+		"manaCost": 10,
+		"legendaryPointsCost": 1
+	}
+]

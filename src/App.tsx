@@ -2,20 +2,9 @@ import Routes from "./routes/index.tsx";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./styles/theme.tsx";
 import { GlobalStyle } from "./styles/GlobalStyles.ts";
-import { useEffect, useState, createContext, useContext } from "react";
-import { ThemeContextType } from "./types/context";
+import { useEffect, useState } from "react";
+import { ThemeContext } from "./hooks/useTheme.ts";
 import * as S from "./Styles.ts";
-
-// Context para o tema
-export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
-
-export const useTheme = () => {
-	const context = useContext(ThemeContext);
-	if (!context) {
-		throw new Error("useTheme must be used within a ThemeProvider");
-	}
-	return context;
-};
 
 const App = () => {
 	// Função para obter o tema inicial do localStorage ou usar 'light' como padrão

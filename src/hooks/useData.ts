@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { dataService } from "../services/dataService";
-import { Magia, SpellProps, ItensProps } from "../types";
+import { Magia, SpellProps, ItensProps, Creature } from "../types";
 
 // Hook para buscar magias (nova estrutura)
 export const useMagias = () => {
@@ -195,4 +195,56 @@ export const useMagiasByCirculo = (circulo: number) => {
 	}, [circulo]);
 
 	return { magias, loading, error, refetch: fetchMagiasByCirculo };
+};
+
+// Hook para buscar todas as criaturas
+export const useCreatures = () => {
+	const [creatures, setCreatures] = useState<Creature[]>([]);
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState<string | null>(null);
+
+	const fetchCreatures = async () => {
+		try {
+			setLoading(true);
+			setError(null);
+			const data = await dataService.getCreatures();
+			setCreatures(data);
+		} catch (err) {
+			setError(err instanceof Error ? err.message : "Erro desconhecido");
+		} finally {
+			setLoading(false);
+		}
+	};
+
+	useEffect(() => {
+		fetchCreatures();
+	}, []);
+
+	return { creatures, loading, error, refetch: fetchCreatures };
+};
+
+// Hook para buscar criatura por ID
+export const useCreature = (id: number) => {
+	const [creature, setCreature] = useState<Creature | null>(null);
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState<string | null>(null);
+
+	const fetchCreature = async () => {
+		try {
+			setLoading(true);
+			setError(null);
+			const data = await dataService.getCreatureById(id);
+			setCreature(data);
+		} catch (err) {
+			setError(err instanceof Error ? err.message : "Erro desconhecido");
+		} finally {
+			setLoading(false);
+		}
+	};
+
+	useEffect(() => {
+		fetchCreature();
+	}, [id]);
+
+	return { creature, loading, error, refetch: fetchCreature };
 };

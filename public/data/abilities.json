@@ -1,0 +1,56 @@
+[
+	{
+		"id": 1,
+		"name": "Furtividade Aprimorada",
+		"description": "A criatura tem vantagem em testes de Furtividade e pode se esconder mesmo quando observada.",
+		"type": "Passiva"
+	},
+	{
+		"id": 2,
+		"name": "Rastreamento Natural",
+		"description": "A criatura pode seguir rastros sem dificuldade e tem vantagem em testes de Sobrevivência.",
+		"type": "Passiva"
+	},
+	{
+		"id": 3,
+		"name": "Visão no Escuro",
+		"description": "A criatura pode ver perfeitamente no escuro até 18 metros.",
+		"type": "Passiva"
+	},
+	{
+		"id": 4,
+		"name": "Caminhada Sombria",
+		"description": "A criatura pode se mover através de sombras como se fosse terreno difícil.",
+		"type": "Passiva"
+	},
+	{
+		"id": 5,
+		"name": "Faro Aprimorado",
+		"description": "A criatura pode detectar presenças pelo cheiro até 30 metros de distância.",
+		"type": "Passiva"
+	},
+	{
+		"id": 6,
+		"name": "Resistência à Magia",
+		"description": "A criatura tem vantagem em testes de resistência contra magias.",
+		"type": "Passiva"
+	},
+	{
+		"id": 7,
+		"name": "Conjuração Arcana",
+		"description": "A criatura pode conjurar magias sem necessidade de componentes materiais.",
+		"type": "Passiva"
+	},
+	{
+		"id": 8,
+		"name": "Resistência Mental",
+		"description": "A criatura tem vantagem em testes de resistência contra efeitos mentais.",
+		"type": "Passiva"
+	},
+	{
+		"id": 9,
+		"name": "Conhecimento Proibido",
+		"description": "A criatura tem acesso a conhecimentos arcanos perigosos e pode identificar magias instantaneamente.",
+		"type": "Passiva"
+	}
+]

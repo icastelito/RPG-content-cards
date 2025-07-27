@@ -1,6 +1,7 @@
 import { Magia, SpellProps } from "./spell";
 import { ItensProps } from "./item";
 import { menuNavigationProps } from "./navigation";
+import { Creature } from "./creatures";
 
 export interface MagiaShowcaseProps {
 	magiasList: Magia[];
@@ -39,4 +40,12 @@ export interface RenderIconProps {
 
 export interface IconMapper {
 	[key: string]: React.ComponentType<any>;
+}
+
+export interface CreatureListProps {
+	creatures: Creature[];
+}
+
+export interface CreatureCardProps {
+	creature: Creature;
 }
