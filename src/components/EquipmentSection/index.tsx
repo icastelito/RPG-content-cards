@@ -70,7 +70,7 @@ const EquipmentSection: React.FC<EquipmentSectionProps> = ({ items, trainings, c
 					{weapons.map((weapon) => {
 						const attackBonus = calculateWeaponBonus(weapon);
 						const bonusDisplay = attackBonus >= 0 ? `+${attackBonus}` : `${attackBonus}`;
-						const isTrained = weapon.category && hasTraining(weapon.category);
+						const isTrained = Boolean(weapon.category && hasTraining(weapon.category));
 
 						return (
 							<S.ItemCard key={weapon.id} $trained={isTrained}>
@@ -126,12 +126,12 @@ const EquipmentSection: React.FC<EquipmentSectionProps> = ({ items, trainings, c
 								)}
 								{armor.damageMitigationMinor && (
 									<S.ItemDetail>
-										<strong>Mitigação Menor:</strong> {armor.damageMitigationMinor}
+										<strong>Limiar Menor:</strong> {armor.damageMitigationMinor}
 									</S.ItemDetail>
 								)}
 								{armor.damageMitigationMajor && (
 									<S.ItemDetail>
-										<strong>Mitigação Maior:</strong> {armor.damageMitigationMajor}
+										<strong>Limiar Maior:</strong> {armor.damageMitigationMajor}
 									</S.ItemDetail>
 								)}
 								{armor.effects && armor.effects.length > 0 && (

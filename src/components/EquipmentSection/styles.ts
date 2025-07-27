@@ -5,7 +5,6 @@ export const EquipmentContainer = styled.div`
 	background: ${({ theme }) => theme.colors.card};
 	border-radius: 8px;
 	border: 1px solid ${({ theme }) => theme.colors.border};
-	max-height: 80vh;
 	overflow-y: auto;
 `;
 
@@ -13,7 +12,7 @@ export const SectionTitle = styled.h3`
 	margin: 0 0 16px 0;
 	font-size: 18px;
 	font-weight: bold;
-	color: ${({ theme }) => theme.colors.primary};
+	color: ${({ theme }) => theme.colors.fontColorStandart};
 	border-bottom: 2px solid ${({ theme }) => theme.colors.primary};
 	padding-bottom: 8px;
 `;
@@ -114,7 +113,7 @@ export const ItemDetails = styled.div`
 
 export const ItemDetail = styled.div`
 	font-size: 12px;
-	color: ${({ theme }) => theme.colors.text};
+	color: ${({ theme }) => theme.colors.fontColorStandart};
 	margin-bottom: 4px;
 	line-height: 1.4;
 
@@ -123,7 +122,7 @@ export const ItemDetail = styled.div`
 	}
 
 	strong {
-		color: ${({ theme }) => theme.colors.primary};
+		color: ${({ theme }) => theme.colors.fontColorStandart};
 		font-weight: 600;
 	}
 `;

@@ -16,7 +16,7 @@
 		"damageType": "Perfurante + Veneno",
 		"category": "Adagas",
 		"properties": ["Arremesso", "Sutil", "Veneno"],
-		"range": "Corpo a corpo / 6m/18m",
+		"range": "Corpo a corpo - 6m/18m",
 		"weight": 1,
 		"attackAttribute": "precision",
 		"targetSkill": "desarme"

@@ -13,8 +13,14 @@ const ItensShowcase: React.FC<ItensShowcaseProps> = ({ itensList }) => (
 				</S.ItemType>
 				<S.ItemRarity> Raridade: {item.rarity} </S.ItemRarity>
 				{item.attunement ? <S.ItemComponents> Requer sintonia </S.ItemComponents> : <></>}
-				<S.ItemPowerIdentity> Identidade de Poder: {item.powerIdentity} </S.ItemPowerIdentity>
-				<S.ItemDescription> Descrição: {item.description} </S.ItemDescription>
+				<S.ItemPowerIdentity>
+					{" "}
+					Identidade Anima: {item.animaIdentity?.join(", ") || "Neutro"}{" "}
+				</S.ItemPowerIdentity>
+				<S.ItemDescription>
+					{" "}
+					Descrição: {Array.isArray(item.description) ? item.description.join(" ") : item.description}{" "}
+				</S.ItemDescription>
 			</S.ShowcaseContent>
 		))}
 	</S.Showcase>

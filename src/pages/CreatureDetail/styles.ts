@@ -4,7 +4,7 @@ export const DetailContainer = styled.div`
 	padding: 2rem 1rem;
 	min-height: calc(100vh - 80px);
 	background: ${(props) => props.theme.colors.background};
-	max-width: 1200px;
+	max-width: 1600px;
 	margin: 0 auto;
 `;
 
