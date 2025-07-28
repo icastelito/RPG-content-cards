@@ -1,11 +1,13 @@
 [
 	{
 		"id": 1,
-		"name": "Ataque com Adaga",
-		"description": "O goblin ataca com uma adaga envenenada.",
-		"type": "Ataque",
-		"effects": ["1d6+2 de dano perfurante", "Possível envenenamento"],
-		"stressCost": 1
+		"name": "Lambidinha de cerol",
+		"description": "Passa veneno na lâmina da adaga, aumentando o dano e a chance de envenenar o alvo.",
+		"type": "Buff",
+		"effects": ["+1d6 de dano de veneno por hit", "Possível envenenamento por hit, CD 12 de fortitude"],
+		"stressCost": 2,
+		"manaCost": 1,
+		"duration": "3 rodadas"
 	},
 	{
 		"id": 2,

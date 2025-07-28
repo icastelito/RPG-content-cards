@@ -30,7 +30,7 @@
 			"atletismo": false,
 			"biologia": false,
 			"charme": false,
-			"crime": true,
+			"ladinagem": true,
 			"curanderia": false,
 			"demolição": false,
 			"diplomacia": false,
@@ -42,7 +42,7 @@
 			"intimidação": false,
 			"intuição": false,
 			"investigação": false,
-			"manuseio": false,
+			"manuseio": true,
 			"medicina": false,
 			"misticismo": false,
 			"natureza": false,
@@ -57,7 +57,8 @@
 			"sacerdocio": false,
 			"sobrevivência": false,
 			"tecnologia": false,
-			"vontade": false
+			"vontade": false,
+			"discernimento": false
 		},
 		"imageMini": "goblin_assassino.png",
 		"image": "goblin_assassino.png",

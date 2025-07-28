@@ -5,7 +5,7 @@ export interface Skills {
 	atletismo: boolean;
 	biologia: boolean;
 	charme: boolean;
-	crime: boolean;
+	ladinagem: boolean;
 	curanderia: boolean;
 	demolição: boolean;
 	diplomacia: boolean;
@@ -33,4 +33,5 @@ export interface Skills {
 	sobrevivência: boolean;
 	tecnologia: boolean;
 	vontade: boolean;
+	discernimento: boolean;
 }

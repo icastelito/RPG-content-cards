@@ -7,6 +7,7 @@ export interface ActionsProps {
 	manaCost?: number; // Custo em PM
 	stressCost?: number; // Custo em SP
 	otherCosts?: string[]; // Outros custos, se houver
+	duration?: string; // Duração da ação, se aplicável
 }
 
 export interface legendaryActions extends ActionsProps {

@@ -24,6 +24,7 @@ const CreatureCard: React.FC<CreatureCardProps> = ({ creature }) => {
 		biologia: "intelligence",
 		tecnologia: "intelligence",
 		investigação: "intelligence",
+		discernimento: "intelligence",
 
 		// Sabedoria
 		intuição: "wisdom",
@@ -49,7 +50,7 @@ const CreatureCard: React.FC<CreatureCardProps> = ({ creature }) => {
 
 		// Precisão
 		manuseio: "precision",
-		crime: "precision", // Ladinagem
+		ladinagem: "precision",
 		pontaria: "precision",
 		desarme: "precision",
 
@@ -373,6 +374,7 @@ const CreatureCard: React.FC<CreatureCardProps> = ({ creature }) => {
 												action.otherCosts.map((cost, index) => (
 													<S.CostItem key={index}>{cost}</S.CostItem>
 												))}
+											{action.duration && <S.CostItem>Duração: {action.duration}</S.CostItem>}
 										</S.ActionCosts>
 									)}
 								</S.ActionItem>

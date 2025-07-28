@@ -1,19 +1,19 @@
 [
 	{
 		"id": 1,
-		"name": "Adaga Envenenada",
+		"name": "Adaga",
 		"attunement": false,
 		"type": "Arma",
 		"subtype": "Adaga",
 		"rarity": "Comum",
-		"animaIdentity": ["Intentum"],
+		"animaIdentity": [],
 		"description": [
-			"Uma adaga com lâmina revestida de veneno. Ideal para ataques furtivos e assassinatos silenciosos."
+			"Uma adaga pequena, fácil de esconder. Ideal para ataques furtivos e assassinatos silenciosos."
 		],
 		"price": 150,
 		"magic": false,
 		"damage": "1d4",
-		"damageType": "Perfurante + Veneno",
+		"damageType": "Perfurante / Cortante",
 		"category": "Adagas",
 		"properties": ["Arremesso", "Sutil", "Veneno"],
 		"range": "Corpo a corpo - 6m/18m",
