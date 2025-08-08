@@ -10,3 +10,4 @@ export * from "./creatures";
 export * from "./actions";
 export * from "./skills";
 export * from "./habilities";
+export * from "./character";

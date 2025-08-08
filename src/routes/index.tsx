@@ -6,6 +6,7 @@ import HomePage from "../pages/Home/index.tsx";
 import Spells from "../pages/Spells/index.tsx";
 import Itens from "../pages/Itens/index.tsx";
 import Ameacas from "../pages/Ameacas/index.tsx";
+import Fichas from "../pages/Fichas/index.tsx";
 import CreatureDetail from "../pages/CreatureDetail/index.tsx";
 import { HeaderIndex, MainContentIndex } from "../components/RouterRender/index.tsx";
 
@@ -20,6 +21,7 @@ function AppRoutes() {
 					<Route path="/spells" element={<Spells />} />
 					<Route path="/itens" element={<Itens />} />
 					<Route path="/ameacas" element={<Ameacas />} />
+					<Route path="/fichas" element={<Fichas />} />
 					<Route path="/ameacas/:id" element={<CreatureDetail />} />
 					<Route
 						path="/index"

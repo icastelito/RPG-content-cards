@@ -147,7 +147,7 @@ const CreatureCard: React.FC<CreatureCardProps> = ({ creature }) => {
 	const renderSkills = () => {
 		if (!detailedCreature?.skills) return null;
 
-		const skillsEntries = Object.entries(detailedCreature.skills);
+		const skillsEntries = Object.entries(detailedCreature.skills) as [string, boolean][];
 		const sortedSkills = sortSkills(skillsEntries);
 
 		return (

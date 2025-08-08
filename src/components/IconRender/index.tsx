@@ -11,10 +11,18 @@ const iconMapper: IconMapper = {
 	GiSpellBook: GiIcons.GiSpellBook,
 	GiBatwingEmblem: GiIcons.GiBatwingEmblem,
 	GiWingedSword: GiIcons.GiWingedSword,
+	GiScrollQuill: GiIcons.GiScrollQuill,
 	// Ícones de ordenação
 	FaSortAlphaDown: FaIcons.FaSortAlphaDown,
 	MdBarChart: MdIcons.MdBarChart,
 	FaStar: FaIcons.FaStar,
+	// Ícones para página de fichas
+	FaEdit: FaIcons.FaEdit,
+	FaFilePdf: FaIcons.FaFilePdf,
+	FaSave: FaIcons.FaSave,
+	FaUndo: FaIcons.FaUndo,
+	FaArrowLeft: FaIcons.FaArrowLeft,
+	GiDiceTwentyFacesTwenty: GiIcons.GiDiceTwentyFacesTwenty,
 };
 
 const RenderIcon: React.FC<RenderIconProps> = ({ iconName, iconSize }) => {

@@ -1,0 +1,177 @@
+[
+	{
+		"nome": "acrobacia",
+		"descricao": "Capacidade de realizar manobras acrobáticas, equilibrar-se e mover-se com agilidade.",
+		"atributo": "agility"
+	},
+	{
+		"nome": "ameaça",
+		"descricao": "Habilidade de intimidar através de força física e presença imponente.",
+		"atributo": "streng"
+	},
+	{
+		"nome": "arcanismo",
+		"descricao": "Conhecimento sobre magia arcana, feitiços e fenômenos mágicos.",
+		"atributo": "intelligence"
+	},
+	{
+		"nome": "atletismo",
+		"descricao": "Força física aplicada em atividades como escalar, nadar e saltar.",
+		"atributo": "streng"
+	},
+	{
+		"nome": "biologia",
+		"descricao": "Conhecimento sobre seres vivos, anatomia e processos biológicos.",
+		"atributo": "intelligence"
+	},
+	{
+		"nome": "charme",
+		"descricao": "Capacidade de encantar e seduzir outras pessoas com carisma.",
+		"atributo": "charisma"
+	},
+	{
+		"nome": "crime",
+		"descricao": "Conhecimento e prática de atividades criminosas e ladinagem.",
+		"atributo": "precision"
+	},
+	{
+		"nome": "curanderia",
+		"descricao": "Habilidade de curar ferimentos e tratar doenças com métodos naturais.",
+		"atributo": "wisdom"
+	},
+	{
+		"nome": "demolição",
+		"descricao": "Conhecimento sobre explosivos e destruição de estruturas.",
+		"atributo": "streng"
+	},
+	{
+		"nome": "diplomacia",
+		"descricao": "Arte de negociar e resolver conflitos através do diálogo.",
+		"atributo": "charisma"
+	},
+	{
+		"nome": "desarme",
+		"descricao": "Habilidade de desativar armadilhas e mecanismos complexos.",
+		"atributo": "precision"
+	},
+	{
+		"nome": "enganação",
+		"descricao": "Capacidade de mentir, blefar e enganar outras pessoas.",
+		"atributo": "charisma"
+	},
+	{
+		"nome": "fortitude",
+		"descricao": "Resistência física contra doenças, venenos e efeitos prejudiciais.",
+		"atributo": "streng"
+	},
+	{
+		"nome": "furtividade",
+		"descricao": "Habilidade de mover-se silenciosamente e permanecer oculto.",
+		"atributo": "agility"
+	},
+	{
+		"nome": "história",
+		"descricao": "Conhecimento sobre eventos passados, culturas e civilizações.",
+		"atributo": "intelligence"
+	},
+	{
+		"nome": "intimidação",
+		"descricao": "Capacidade de causar medo e coagir através de presença dominante.",
+		"atributo": "charisma"
+	},
+	{
+		"nome": "intuição",
+		"descricao": "Percepção instintiva e capacidade de sentir intenções ocultas.",
+		"atributo": "wisdom"
+	},
+	{
+		"nome": "investigação",
+		"descricao": "Habilidade de encontrar pistas, analisar evidências e resolver mistérios.",
+		"atributo": "intelligence"
+	},
+	{
+		"nome": "manuseio",
+		"descricao": "Destreza manual para usar ferramentas e armas com precisão.",
+		"atributo": "precision"
+	},
+	{
+		"nome": "medicina",
+		"descricao": "Conhecimento médico para tratar ferimentos e diagnosticar condições.",
+		"atributo": "intelligence"
+	},
+	{
+		"nome": "misticismo",
+		"descricao": "Compreensão de fenômenos espirituais e conhecimento esotérico.",
+		"atributo": "wisdom"
+	},
+	{
+		"nome": "natureza",
+		"descricao": "Conhecimento sobre o mundo natural, plantas e animais.",
+		"atributo": "wisdom"
+	},
+	{
+		"nome": "nobreza",
+		"descricao": "Conhecimento sobre etiqueta, política e estruturas sociais.",
+		"atributo": "intelligence"
+	},
+	{
+		"nome": "ocultismo",
+		"descricao": "Conhecimento sobre o sobrenatural, cultos e práticas secretas.",
+		"atributo": "intelligence"
+	},
+	{
+		"nome": "percepção",
+		"descricao": "Capacidade de notar detalhes no ambiente e detectar perigos.",
+		"atributo": "wisdom"
+	},
+	{
+		"nome": "pilotagem",
+		"descricao": "Habilidade de operar veículos e montarias com destreza.",
+		"atributo": "agility"
+	},
+	{
+		"nome": "pontaria",
+		"descricao": "Precisão com armas de projétil e ataques à distância.",
+		"atributo": "precision"
+	},
+	{
+		"nome": "presença",
+		"descricao": "Capacidade de comandar atenção e liderar através do carisma.",
+		"atributo": "charisma"
+	},
+	{
+		"nome": "religião",
+		"descricao": "Conhecimento sobre divindades, rituais e doutrinas religiosas.",
+		"atributo": "intelligence"
+	},
+	{
+		"nome": "reflexos",
+		"descricao": "Velocidade de reação para evitar perigos e ataques súbitos.",
+		"atributo": "agility"
+	},
+	{
+		"nome": "sacerdocio",
+		"descricao": "Conhecimento e prática de ritos sagrados e comunicação divina.",
+		"atributo": "wisdom"
+	},
+	{
+		"nome": "sobrevivência",
+		"descricao": "Habilidade de sobreviver em ambientes selvagens e hostis.",
+		"atributo": "wisdom"
+	},
+	{
+		"nome": "tecnologia",
+		"descricao": "Conhecimento sobre dispositivos mecânicos e tecnológicos.",
+		"atributo": "intelligence"
+	},
+	{
+		"nome": "vontade",
+		"descricao": "Resistência mental contra controle, ilusões e efeitos psíquicos.",
+		"atributo": "wisdom"
+	},
+	{
+		"nome": "discernimento",
+		"descricao": "Capacidade de distinguir verdade de mentira e avaliar situações.",
+		"atributo": "wisdom"
+	}
+]

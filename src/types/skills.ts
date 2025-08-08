@@ -35,3 +35,14 @@ export interface Skills {
 	vontade: boolean;
 	discernimento: boolean;
 }
+
+export interface SkillProps {
+	nome: string;
+	descricao: string;
+	atributo: string;
+}
+
+// Interface para skills do personagem (inclui status de treinamento)
+export interface CharacterSkill extends SkillProps {
+	treinado: boolean;
+}

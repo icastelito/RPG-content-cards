@@ -1,4 +1,4 @@
-import { Magia, SpellProps, Creature, Actions, Ability } from "../types";
+import { Magia, SpellProps, Creature, Actions, Ability, SkillProps } from "../types";
 import { ItensProps } from "../types";
 
 // Base URL para os arquivos JSON locais
@@ -289,6 +289,42 @@ export const dataService = {
 			return items.filter((item) => ids.includes(item.id));
 		} catch (error) {
 			console.error("Erro ao buscar itens por IDs:", error);
+			throw error;
+		}
+	},
+
+	// Buscar todas as skills
+	async getSkills(): Promise<SkillProps[]> {
+		try {
+			const response = await fetch(`${BASE_URL}/skills.json`);
+			if (!response.ok) {
+				throw new Error(`Erro ao buscar skills: ${response.status}`);
+			}
+			return await response.json();
+		} catch (error) {
+			console.error("Erro ao carregar skills:", error);
+			throw error;
+		}
+	},
+
+	// Buscar skill por nome
+	async getSkillByName(nome: string): Promise<SkillProps | null> {
+		try {
+			const skills = await this.getSkills();
+			return skills.find((skill) => skill.nome.toLowerCase() === nome.toLowerCase()) || null;
+		} catch (error) {
+			console.error("Erro ao buscar skill por nome:", error);
+			throw error;
+		}
+	},
+
+	// Buscar skills por atributo
+	async getSkillsByAttribute(atributo: string): Promise<SkillProps[]> {
+		try {
+			const skills = await this.getSkills();
+			return skills.filter((skill) => skill.atributo === atributo);
+		} catch (error) {
+			console.error("Erro ao buscar skills por atributo:", error);
 			throw error;
 		}
 	},
