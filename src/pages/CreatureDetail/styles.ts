@@ -2,10 +2,15 @@ import styled from "styled-components";
 
 export const DetailContainer = styled.div`
 	padding: 2rem 1rem;
+	padding-top: 100px; /* Espaço para o header fixo */
 	min-height: calc(100vh - 80px);
 	background: ${(props) => props.theme.colors.background};
 	max-width: 1600px;
 	margin: 0 auto;
+
+	@media (max-width: 768px) {
+		padding-top: 90px; /* Padding menor para mobile */
+	}
 `;
 
 export const BackButton = styled.button`

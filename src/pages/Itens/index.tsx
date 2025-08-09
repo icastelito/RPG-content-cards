@@ -1,40 +1,30 @@
 import ItensShowcase from "../../components/ItensShowcase";
 import { useItems } from "../../hooks/useData";
-import { HeaderIndex } from "../../components/RouterRender";
-import * as S from "./styles";
+import PageLayout from "../../components/PageLayout";
 
 const Itens = () => {
 	const { items, loading, error } = useItems();
 
 	if (loading) {
 		return (
-			<>
-				<HeaderIndex />
-				<S.ShowcaseSection>
-					<div>Carregando itens...</div>
-				</S.ShowcaseSection>
-			</>
+			<PageLayout useShowcaseSection={true}>
+				<div>Carregando itens...</div>
+			</PageLayout>
 		);
 	}
 
 	if (error) {
 		return (
-			<>
-				<HeaderIndex />
-				<S.ShowcaseSection>
-					<div>Erro ao carregar itens: {error}</div>
-				</S.ShowcaseSection>
-			</>
+			<PageLayout useShowcaseSection={true}>
+				<div>Erro ao carregar itens: {error}</div>
+			</PageLayout>
 		);
 	}
 
 	return (
-		<>
-			<HeaderIndex />
-			<S.ShowcaseSection>
-				<ItensShowcase itensList={items} />
-			</S.ShowcaseSection>
-		</>
+		<PageLayout useShowcaseSection={true}>
+			<ItensShowcase itensList={items} />
+		</PageLayout>
 	);
 };
 

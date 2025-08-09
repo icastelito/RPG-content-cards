@@ -9,6 +9,11 @@ export const Content = styled.div`
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 2rem;
+	padding-top: 100px; /* Espaço para o header fixo */
+
+	@media (max-width: 768px) {
+		padding-top: 90px; /* Padding menor para mobile */
+	}
 `;
 
 export const PageTitle = styled.h1`

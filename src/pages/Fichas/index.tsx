@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import * as S from "./styles";
 import { HeaderIndex } from "../../components/RouterRender";
 import IconRender from "../../components/IconRender";
@@ -7,6 +8,7 @@ import { CharacterSheet } from "../../types";
 
 const Fichas: React.FC = () => {
 	const [showForm, setShowForm] = useState(false);
+	const navigate = useNavigate();
 
 	const handleSave = (character: CharacterSheet) => {
 		console.log("Personagem salvo:", character);
@@ -20,8 +22,14 @@ const Fichas: React.FC = () => {
 	};
 
 	const handleSelectModel = (modelNumber: number) => {
-		// TODO: Navegação para o modelo específico
-		alert(`Modelo ${modelNumber} selecionado! Em desenvolvimento...`);
+		// Navegação para o modelo específico
+		if (modelNumber === 1) {
+			navigate("/fichas/Classica");
+		} else if (modelNumber === 2) {
+			navigate("/fichas/Moderna");
+		} else {
+			navigate("/fichas/Completa");
+		}
 	};
 
 	if (showForm) {
