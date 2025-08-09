@@ -6,7 +6,7 @@ export const PageContainer = styled.div`
 	padding-left: 20px;
 	padding-right: 20px;
 	padding-bottom: 20px;
-	background: ${(props) => props.theme?.colors?.primary || "#f8f6f0"};
+	background: ${(props) => props.theme?.colors?.background || "#f8f6f0"};
 
 	@media (max-width: 768px) {
 		padding-top: 90px; /* Padding menor para mobile onde o menu tem 70px */

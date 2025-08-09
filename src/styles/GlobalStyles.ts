@@ -16,8 +16,7 @@ body {
   padding: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: linear-gradient(135deg, ${(props) => props.theme.colors.primary} 0%, ${(props) =>
-	props.theme.colors.primaryLight} 100%);
+  background: ${(props) => props.theme.colors.background};
   font-family: ${(props) => props.theme.fonts.body}, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.6;
   color: ${(props) => props.theme.colors.fontColorStandart};

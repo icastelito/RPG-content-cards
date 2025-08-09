@@ -25,8 +25,8 @@ export const SearchInput = styled.input`
 	font-size: ${(props) => props.theme.fontSizes.base};
 	font-family: ${(props) => props.theme.fonts.body};
 	transition: all 0.3s ease;
-	background: ${(props) => props.theme.colors.primaryLight};
-	color: ${(props) => props.theme.colors.fontColorStandart};
+	background: ${(props) => props.theme.colors.surface};
+	color: ${(props) => props.theme.colors.textOnSurface};
 
 	&:focus {
 		outline: none;
@@ -69,8 +69,8 @@ export const FilterSelect = styled.select`
 	border-radius: ${(props) => props.theme.borderRadius.md};
 	font-size: ${(props) => props.theme.fontSizes.sm};
 	font-family: ${(props) => props.theme.fonts.body};
-	background: ${(props) => props.theme.colors.primaryLight};
-	color: ${(props) => props.theme.colors.fontColorStandart};
+	background: ${(props) => props.theme.colors.surface};
+	color: ${(props) => props.theme.colors.textOnSurface};
 	cursor: pointer;
 	transition: all 0.3s ease;
 
@@ -117,9 +117,9 @@ export const ResultsInfo = styled.div`
 	text-align: center;
 	margin: ${(props) => props.theme.spacing.lg} 0;
 	padding: ${(props) => props.theme.spacing.md};
-	background: ${(props) => props.theme.colors.primaryLight};
+	background: ${(props) => props.theme.colors.surface};
 	border-radius: ${(props) => props.theme.borderRadius.md};
-	color: ${(props) => props.theme.colors.fontColorDark};
+	color: ${(props) => props.theme.colors.textOnSurface};
 	font-size: ${(props) => props.theme.fontSizes.sm};
 	font-family: ${(props) => props.theme.fonts.body};
 `;

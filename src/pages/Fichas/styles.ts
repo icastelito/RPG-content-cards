@@ -19,7 +19,7 @@ export const Content = styled.div`
 export const PageTitle = styled.h1`
 	font-size: 2.5rem;
 	font-weight: bold;
-	color: ${({ theme }) => theme.colors.primary};
+	color: ${({ theme }) => theme.colors.fontColorDark};
 	text-align: center;
 	margin-bottom: 1rem;
 	font-family: "TrajanPro", serif;
@@ -27,7 +27,7 @@ export const PageTitle = styled.h1`
 
 export const Description = styled.p`
 	font-size: 1.1rem;
-	color: ${({ theme }) => theme.colors.text};
+	color: ${({ theme }) => theme.colors.fontColorStandart};
 	text-align: center;
 	margin-bottom: 3rem;
 	line-height: 1.6;
@@ -63,7 +63,7 @@ export const FeatureIcon = styled.div`
 	justify-content: center;
 	width: 48px;
 	height: 48px;
-	color: ${({ theme }) => theme.colors.primary};
+	color: ${({ theme }) => theme.colors.secondary};
 	flex-shrink: 0;
 	transition: color 0.3s ease;
 

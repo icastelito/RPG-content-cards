@@ -36,7 +36,7 @@ export const ContentButtom = styled.a`
 	}
 
 	&:hover {
-		background-color: ${(props) => props.theme.colors.primaryLight};
+		background-color: ${(props) => props.theme.colors.surface};
 		transition: 0.85s;
 		transform: scale(1.05);
 		box-shadow: 0 0 10px 0 ${(props) => props.theme.colors.greyLight};

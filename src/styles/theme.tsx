@@ -125,6 +125,12 @@ export const lightTheme = {
 		fontColorStandart: "rgb(31, 41, 55)", // Cinza escuro para texto principal
 		fontColorDark: "rgb(17, 24, 39)", // Quase preto para títulos
 		fontColorLight: "rgb(107, 114, 128)", // Cinza para texto secundário
+		background: "rgb(248, 250, 252)", // Fundo da aplicação
+		surface: "rgb(255, 255, 255)", // Superfície de cards/componentes
+		border: "rgb(209, 213, 219)", // Bordas
+		textOnPrimary: "rgb(17, 24, 39)", // Texto sobre fundo primário
+		textOnSecondary: "rgb(255, 255, 255)", // Texto sobre fundo secundário
+		textOnSurface: "rgb(31, 41, 55)", // Texto sobre superfícies
 	} as ColorScheme,
 	fonts: {
 		body: "PTSans, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
@@ -218,8 +224,14 @@ export const darkTheme = {
 
 		// Cores de texto otimizadas para tema escuro
 		fontColorStandart: "rgb(226, 232, 240)", // Texto principal claro
-		fontColorDark: "rgb(203, 213, 225)", // Texto secundário
-		fontColorLight: "rgb(248, 250, 252)", // Texto enfatizado
+		fontColorDark: "rgb(248, 250, 252)", // Texto enfatizado/títulos - mais claro
+		fontColorLight: "rgb(148, 163, 184)", // Texto secundário
+		background: "rgb(15, 23, 42)", // Fundo da aplicação
+		surface: "rgb(30, 41, 59)", // Superfície de cards/componentes
+		border: "rgb(71, 85, 105)", // Bordas
+		textOnPrimary: "rgb(248, 250, 252)", // Texto sobre fundo primário
+		textOnSecondary: "rgb(248, 250, 252)", // Texto sobre fundo secundário
+		textOnSurface: "rgb(226, 232, 240)", // Texto sobre superfícies
 	} as ColorScheme,
 	fonts: {
 		body: "PTSans, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",

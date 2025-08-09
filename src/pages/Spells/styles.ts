@@ -22,9 +22,9 @@ export const ShowcaseSection = styled.section`
 
 export const ResultsInfo = styled.div`
 	text-align: center;
-	background: ${(props) => props.theme.colors.primaryLight};
+	background: ${(props) => props.theme.colors.surface};
 	border-radius: ${(props) => props.theme.borderRadius.md};
-	color: ${(props) => props.theme.colors.fontColorDark};
+	color: ${(props) => props.theme.colors.textOnSurface};
 	font-size: ${(props) => props.theme.fontSizes.sm};
 	font-family: ${(props) => props.theme.fonts.body};
 	width: 100%;

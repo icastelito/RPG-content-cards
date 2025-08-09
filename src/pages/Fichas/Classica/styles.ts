@@ -811,7 +811,7 @@ export const FeatureHeader = styled.div<ThemeProps>`
 		font-family: "Trajan-Pro-Regular", serif;
 		font-size: 2.5mm;
 		font-weight: 700;
-		color: ${(props) => props.theme?.colors?.fontColorDark || "var(--primary-color)"};
+		color: var(--primary-color);
 		text-transform: uppercase;
 		letter-spacing: 0.5px;
 		margin: 0;
