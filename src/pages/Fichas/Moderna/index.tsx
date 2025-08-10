@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import useSkills from "../../../hooks/useSkills";
 import { HeaderIndex } from "../../../components/RouterRender/index";
 import {
+	LineInputFooter,
+	FooterInputsSection,
 	Container,
 	A4Container,
 	Header,
@@ -41,9 +43,9 @@ import {
 	PointsLineLabel,
 	PointsBoxTitle,
 	StatusSection,
-	StatusGroup,
 	StatusLabel,
 	RoundCheckbox,
+	FooterInputsContainer,
 } from "./styles";
 import * as IoIcons from "react-icons/io5";
 
@@ -122,6 +124,64 @@ const Moderna: React.FC = () => {
 		}));
 	};
 
+	// Função simplificada para exportar PDF
+	const handleExportPDF = () => {
+		// Adiciona CSS específico para impressão
+		const printStyle = document.createElement("style");
+		printStyle.id = "print-only-styles";
+		printStyle.innerHTML = `
+			@media print {
+				@page {
+					size: A4;
+					margin: 0;
+				}
+				
+				/* Oculta TUDO exceto o A4Container */
+				body * {
+					visibility: hidden;
+				}
+				
+				/* Torna visível apenas o A4Container e seus filhos */
+				[data-testid="a4-container"],
+				[data-testid="a4-container"] * {
+					visibility: visible;
+				}
+				
+				/* Posiciona o A4Container no topo da página */
+				[data-testid="a4-container"] {
+					position: absolute !important;
+					left: 0 !important;
+					top: 0 !important;
+					margin: 0 !important;
+					padding: 10mm !important;
+					width: 210mm !important;
+					height: 297mm !important;
+					background: white !important;
+					border: none !important;
+					box-shadow: none !important;
+				}
+				
+				body {
+					margin: 0 !important;
+					padding: 0 !important;
+				}
+			}
+		`;
+
+		document.head.appendChild(printStyle);
+
+		// Executa a impressão
+		window.print();
+
+		// Remove o estilo após a impressão
+		setTimeout(() => {
+			const styleElement = document.getElementById("print-only-styles");
+			if (styleElement) {
+				document.head.removeChild(styleElement);
+			}
+		}, 1000);
+	};
+
 	// Função para agrupar perícias por atributo
 	const groupSkillsByAttribute = () => {
 		const grouped = {
@@ -186,12 +246,12 @@ const Moderna: React.FC = () => {
 			<Header>
 				<HeaderContent>
 					<h2>Ficha de Personagem - Layout Moderno</h2>
-					<ExportButton onClick={() => window.print()}>
+					<ExportButton onClick={handleExportPDF}>
 						<IoIcons.IoDownload /> Exportar PDF
 					</ExportButton>
 				</HeaderContent>
 			</Header>
-			<A4Container>
+			<A4Container data-testid="a4-container">
 				<ModernLayout>
 					<LeftPanel>
 						<AttributeBlock
@@ -445,22 +505,52 @@ const Moderna: React.FC = () => {
 							</div>
 						</FeaturesSection>
 						<StatusSection>
-							<StatusGroup>
-								<StatusLabel>Pontos de Anima</StatusLabel>
-								<RoundCheckbox></RoundCheckbox>
-								<RoundCheckbox></RoundCheckbox>
-								<RoundCheckbox></RoundCheckbox>
-								<RoundCheckbox></RoundCheckbox>
-								<RoundCheckbox></RoundCheckbox>
-							</StatusGroup>
-							<StatusGroup>
-								<StatusLabel>Cicatrizes</StatusLabel>
-								<RoundCheckbox></RoundCheckbox>
-								<RoundCheckbox></RoundCheckbox>
-								<RoundCheckbox></RoundCheckbox>
-								<RoundCheckbox></RoundCheckbox>
-								<RoundCheckbox></RoundCheckbox>
-							</StatusGroup>
+							<FooterInputsSection>
+								<StatusLabel>Anima Ressaltado</StatusLabel>
+								<FooterInputsContainer>
+									<LineInputFooter type="text" placeholder="" />
+									<RoundCheckbox></RoundCheckbox>
+								</FooterInputsContainer>
+								<FooterInputsContainer>
+									<LineInputFooter type="text" placeholder="" />
+									<RoundCheckbox></RoundCheckbox>
+								</FooterInputsContainer>
+								<FooterInputsContainer>
+									<LineInputFooter type="text" placeholder="" />
+									<RoundCheckbox></RoundCheckbox>
+								</FooterInputsContainer>
+								<FooterInputsContainer>
+									<LineInputFooter type="text" placeholder="" />
+									<RoundCheckbox></RoundCheckbox>
+								</FooterInputsContainer>
+								<FooterInputsContainer>
+									<LineInputFooter type="text" placeholder="" />
+									<RoundCheckbox></RoundCheckbox>
+								</FooterInputsContainer>
+							</FooterInputsSection>
+							<FooterInputsSection>
+								<StatusLabel>Cicatrizes </StatusLabel>
+								<FooterInputsContainer>
+									<LineInputFooter type="text" placeholder="" />
+									<RoundCheckbox></RoundCheckbox>
+								</FooterInputsContainer>
+								<FooterInputsContainer>
+									<LineInputFooter type="text" placeholder="" />
+									<RoundCheckbox></RoundCheckbox>
+								</FooterInputsContainer>
+								<FooterInputsContainer>
+									<LineInputFooter type="text" placeholder="" />
+									<RoundCheckbox></RoundCheckbox>
+								</FooterInputsContainer>
+								<FooterInputsContainer>
+									<LineInputFooter type="text" placeholder="" />
+									<RoundCheckbox></RoundCheckbox>
+								</FooterInputsContainer>
+								<FooterInputsContainer>
+									<LineInputFooter type="text" placeholder="" />
+									<RoundCheckbox></RoundCheckbox>
+								</FooterInputsContainer>
+							</FooterInputsSection>
 						</StatusSection>
 					</RightPanel>
 				</ModernLayout>

@@ -19,6 +19,17 @@ export const Container = styled.div`
 	min-height: 100vh;
 	color: ${(props) => props.theme.textOnSurface};
 	padding: 100px 20px 20px 20px;
+
+	@media print {
+		padding: 0;
+		background: white;
+		min-height: auto;
+
+		/* Oculta tudo exceto o A4Container */
+		& > *:not([data-testid="a4-container"]) {
+			display: none !important;
+		}
+	}
 `;
 
 // Layout Principal
@@ -31,7 +42,6 @@ export const A4Container = styled.div`
 	height: 297mm;
 	background-color: var(--card-background);
 	border: 1px solid var(--border-color);
-	border-radius: 8px;
 	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 	position: relative;
 	margin: 20px 0;
@@ -39,11 +49,19 @@ export const A4Container = styled.div`
 	overflow: hidden;
 
 	@media print {
-		width: 210mm;
-		min-height: 297mm;
-		margin: 0;
-		box-shadow: none;
-		border: none;
+		width: 210mm !important;
+		height: 297mm !important;
+		min-height: 297mm !important;
+		max-height: none !important;
+		margin: 0 !important;
+		padding: 10mm !important;
+		box-shadow: none !important;
+		border: none !important;
+		border-radius: 0 !important;
+		background-color: white !important;
+		overflow: visible !important;
+		page-break-after: always;
+		position: relative !important;
 	}
 `;
 
@@ -53,6 +71,10 @@ export const Header = styled.div`
 	padding: 20px;
 	text-align: center;
 	border-radius: 8px 8px 0 0;
+
+	@media print {
+		display: none;
+	}
 `;
 
 export const HeaderContent = styled.div`
@@ -98,7 +120,6 @@ export const RightPanel = styled.div`
 	height: 280mm;
 	margin-left: 5mm;
 	background: var(--card-background);
-	overflow-y: auto;
 `;
 
 // Blocos de Atributo e Perícia
@@ -113,6 +134,7 @@ export const AttributeHeader = styled.div`
 	font-weight: bold;
 	color: var(--primary-color);
 	font-size: 14px;
+	font-family: Philosopher;
 `;
 
 export const AttributeValue = styled.div`
@@ -169,6 +191,8 @@ export const SkillCheckbox = styled.input`
 export const SkillName = styled.span`
 	flex: 1;
 	color: var(--text-color);
+	font-family: Philosopher;
+	text-transform: uppercase;
 `;
 
 export const SkillInput = styled.input`
@@ -200,14 +224,14 @@ export const SkillInput = styled.input`
 
 // Cabeçalho do Personagem (Lado Direito)
 export const CharacterHeader = styled.div`
-	margin-bottom: 20px;
+	margin-bottom: 8px;
 `;
 
 export const CharacterInfo = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 120px;
 	gap: 20px;
-	margin-bottom: 16px;
+	margin-bottom: 8px;
 `;
 
 export const FormField = styled.div`
@@ -308,11 +332,6 @@ export const Line = styled.div`
 	background: var(--border-color);
 `;
 
-// Seção de Armas
-export const WeaponsSection = styled.div`
-	margin-bottom: 20px;
-`;
-
 export const WeaponsTable = styled.div`
 	display: grid;
 	grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
@@ -329,9 +348,7 @@ export const WeaponInput = styled.input`
 `;
 
 // Seção de Características
-export const FeaturesSection = styled.div`
-	margin-bottom: 20px;
-`;
+export const FeaturesSection = styled.div``;
 
 export const FeatureTextarea = styled.textarea`
 	width: 100%;
@@ -397,6 +414,7 @@ export const Label = styled.label`
 	font-size: 12px;
 	font-weight: bold;
 	color: var(--primary-color);
+	font-family: Philosopher;
 	margin-bottom: 4px;
 	display: block;
 `;
@@ -425,6 +443,7 @@ export const PointsLabel = styled.span`
 	font-size: 12px;
 	font-weight: bold;
 	color: var(--primary-color);
+	font-family: Philosopher;
 	min-width: 20px;
 `;
 
@@ -467,6 +486,7 @@ export const LineFieldContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 12px;
+	font-family: Philosopher;
 `;
 
 export const LineInput = styled.input`
@@ -498,6 +518,33 @@ export const LineInput = styled.input`
 		-moz-appearance: textfield;
 	}
 `;
+export const LineInputFooter = styled.input`
+	width: 90%;
+	border: none;
+	border-bottom: 2px solid var(--border-color);
+	background: transparent;
+	color: var(--text-color);
+	font-size: 10px;
+
+	&:focus {
+		outline: none;
+		border-bottom-color: var(--primary-color);
+	}
+
+	&::placeholder {
+		color: var(--secondary-color);
+	}
+	/* Remove os botões de incremento/decremento do input number */
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	&[type="number"] {
+		-moz-appearance: textfield;
+	}
+`;
 
 export const LineLabel = styled.label`
 	font-size: 11px;
@@ -505,6 +552,7 @@ export const LineLabel = styled.label`
 	color: var(--primary-color);
 	margin-top: 4px;
 	text-transform: uppercase;
+	font-family: Philosopher;
 `;
 
 // Componente para caixa de pontos de vida estilo tabela
@@ -659,6 +707,7 @@ export const PointsLineLabel = styled.span`
 	text-transform: uppercase;
 	color: var(--text-color);
 	text-align: start;
+	font-family: Philosopher;
 	width: 80%;
 `;
 
@@ -666,9 +715,9 @@ export const PointsLineLabel = styled.span`
 export const StatusSection = styled.div`
 	display: flex;
 	flex-direction: row;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: space-between;
-	margin: 10px 0;
+	height: 40mm;
 `;
 
 export const StatusGroup = styled.div`
@@ -678,18 +727,28 @@ export const StatusGroup = styled.div`
 	gap: 3px;
 `;
 
+export const FooterInputsSection = styled.div`
+	display: flex;
+	flex-direction: column;
+	width: 50mm;
+	height: 100%;
+	justify-content: space-evenly;
+	padding: 2mm 0;
+`;
+
 export const StatusLabel = styled.p`
 	font-size: 12px;
 	font-weight: bold;
 	color: var(--text-color);
+	font-family: Philosopher;
 	margin: 0;
 	margin-right: 8px;
 `;
 
 export const RoundCheckbox = styled.div`
 	display: inline-block;
-	width: 3mm;
-	height: 3mm;
+	width: 12px;
+	height: 12px;
 	border: 1px solid var(--border-black);
 	border-radius: 50%;
 	background: var(--card-background);
@@ -699,5 +758,60 @@ export const RoundCheckbox = styled.div`
 
 	&:hover {
 		border-color: var(--primary-color);
+	}
+
+	@media print {
+		border-color: black !important;
+		background: white !important;
+	}
+`;
+
+export const FooterInputsContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin: 1.5mm 0;
+`;
+
+// Estilos globais para impressão - garante que apenas o A4Container seja impresso
+export const GlobalPrintStyles = `
+	@media print {
+		@page {
+			size: A4;
+			margin: 0;
+		}
+		
+		body {
+			margin: 0 !important;
+			padding: 0 !important;
+		}
+		
+		/* Oculta todos os elementos de navegação */
+		header,
+		nav,
+		.header,
+		.navbar,
+		.navigation,
+		[class*="header"],
+		[class*="nav"],
+		[class*="menu"] {
+			display: none !important;
+		}
+		
+		/* Oculta elementos que não são o A4Container */
+		body > *:not([data-testid="a4-container"]) {
+			display: none !important;
+		}
+		
+		/* Garante que apenas o A4Container seja visível */
+		[data-testid="a4-container"] {
+			display: block !important;
+			position: static !important;
+		}
+		
+		* {
+			-webkit-print-color-adjust: exact !important;
+			color-adjust: exact !important;
+		}
 	}
 `;
