@@ -184,6 +184,20 @@ export const CreatureName = styled.h1`
 	font-weight: bold;
 `;
 
+export const CreatureNameContainer = styled.div`
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	flex-wrap: wrap;
+`;
+
+export const CreatureAnimaSymbols = styled.span`
+	font-size: 2rem;
+	color: ${(props) => props.theme.colors.secondary};
+	font-weight: bold;
+	opacity: 0.9;
+`;
+
 export const CreatureTypeInfo = styled.h2`
 	color: ${(props) => props.theme.colors.fontColorSecondary};
 	font-family: ${(props) => props.theme.fonts.body};
@@ -469,23 +483,4 @@ export const SpellDescription = styled.p`
 	font-family: ${(props) => props.theme.fonts.body};
 	margin: 0;
 	line-height: 1.5;
-`;
-
-export const AnimaSection = styled.div`
-	margin-bottom: 2rem;
-`;
-
-export const AnimaList = styled.div`
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.5rem;
-`;
-
-export const AnimaItem = styled.span`
-	background: ${(props) => props.theme.colors.accent};
-	color: white;
-	padding: 0.5rem 1rem;
-	border-radius: 20px;
-	font-size: 0.9rem;
-	font-weight: bold;
 `;

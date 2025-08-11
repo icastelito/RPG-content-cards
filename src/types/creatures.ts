@@ -28,9 +28,10 @@ export interface Creature {
 	charisma: number;
 	image?: string;
 	imageMini?: string;
+	imagePath?: string;
 	skills?: Skills;
 	itens?: number[];
-	trainings: string[];
+	trainings?: string[];
 }
 // Interface para habilidades separadas
 export interface Ability {

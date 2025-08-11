@@ -2,6 +2,37 @@ import React from "react";
 import { ItensProps, Weapon, Armor, Consumable } from "../../types";
 import * as S from "./styles";
 
+const getAnimaSymbols = (animaIdentity?: string[]): string => {
+	if (!animaIdentity || animaIdentity.length === 0) return "";
+
+	const symbolMap: { [key: string]: string } = {
+		"Natura": "⚘",
+		"Intentum": "⌖",
+		"Égote": "⌬",
+		"Logos": "⚚",
+		"Ethos": "⚜",
+	};
+
+	// Contar ocorrências de cada tipo
+	const counts: { [key: string]: number } = {};
+	animaIdentity.forEach((identity) => {
+		counts[identity] = (counts[identity] || 0) + 1;
+	});
+
+	let result = "";
+
+	// Processar cada tipo único
+	Object.entries(counts).forEach(([identity, count]) => {
+		if (identity === "Neutro") {
+			result += `⊙${count > 1 ? count : ""}`;
+		} else if (symbolMap[identity]) {
+			result += symbolMap[identity].repeat(count);
+		}
+	});
+
+	return result;
+};
+
 interface EquipmentSectionProps {
 	items: ItensProps[];
 	trainings: string[];
@@ -30,10 +61,43 @@ const EquipmentSection: React.FC<EquipmentSectionProps> = ({ items, trainings, c
 	const calculateWeaponBonus = (weapon: Weapon) => {
 		let bonus = 0;
 
-		// Bônus do atributo usado para ataque
-		if (weapon.attackAttribute) {
-			const attributeValue = creatureAttributes[weapon.attackAttribute as keyof typeof creatureAttributes];
-			bonus += getAttributeModifier(attributeValue);
+		// Bônus do atributo usado para ataque (baseado nas afinidades)
+		if (weapon.affinities && weapon.affinities.length > 0) {
+			// Usar a primeira afinidade como atributo principal
+			const primaryAffinity = weapon.affinities[0];
+			let attributeKey = "";
+
+			switch (primaryAffinity.atributo.toLowerCase()) {
+				case "for":
+				case "força":
+					attributeKey = "streng";
+					break;
+				case "des":
+				case "destreza":
+					attributeKey = "agility";
+					break;
+				case "pre":
+				case "precisão":
+					attributeKey = "precision";
+					break;
+				case "int":
+				case "inteligência":
+					attributeKey = "intelligence";
+					break;
+				case "sab":
+				case "sabedoria":
+					attributeKey = "wisdom";
+					break;
+				case "car":
+				case "carisma":
+					attributeKey = "charisma";
+					break;
+			}
+
+			if (attributeKey) {
+				const attributeValue = creatureAttributes[attributeKey as keyof typeof creatureAttributes];
+				bonus += getAttributeModifier(attributeValue);
+			}
 		}
 
 		// Bônus de treinamento (+2 se treinado na categoria)
@@ -75,24 +139,48 @@ const EquipmentSection: React.FC<EquipmentSectionProps> = ({ items, trainings, c
 						return (
 							<S.ItemCard key={weapon.id} $trained={isTrained}>
 								<S.ItemHeader>
-									<S.ItemName $rarity={weapon.rarity}>{weapon.name}</S.ItemName>
+									<S.ItemName $rarity={weapon.rarity}>
+										{weapon.name}
+										{getAnimaSymbols(weapon.animaIdentity) && (
+											<S.AnimaSymbols>{getAnimaSymbols(weapon.animaIdentity)}</S.AnimaSymbols>
+										)}
+									</S.ItemName>
 									{isTrained && <S.TrainingBadge>Treinado</S.TrainingBadge>}
 								</S.ItemHeader>
 								<S.ItemDetails>
 									<S.ItemDetail>
-										<strong>Dano:</strong> {weapon.damage} {weapon.damageType}
+										<strong>Dano:</strong> {weapon.baseDamage} {weapon.damageType}
 									</S.ItemDetail>
 									<S.ItemDetail>
 										<strong>Ataque:</strong> {bonusDisplay}
 									</S.ItemDetail>
+									{weapon.affinities && weapon.affinities.length > 0 && (
+										<S.ItemDetail>
+											<strong>Afinidades:</strong>{" "}
+											{weapon.affinities
+												.map((aff) => `${aff.atributo} (${aff.escala})`)
+												.join(", ")}
+										</S.ItemDetail>
+									)}
 									{weapon.range && (
 										<S.ItemDetail>
 											<strong>Alcance:</strong> {weapon.range}
+											{weapon.maxRange && ` / ${weapon.maxRange}`}
+										</S.ItemDetail>
+									)}
+									{weapon.weight && (
+										<S.ItemDetail>
+											<strong>Peso:</strong> {weapon.weight} kg
 										</S.ItemDetail>
 									)}
 									{weapon.properties && weapon.properties.length > 0 && (
 										<S.ItemDetail>
 											<strong>Propriedades:</strong> {weapon.properties.join(", ")}
+										</S.ItemDetail>
+									)}
+									{weapon.magicalEffects && weapon.magicalEffects.length > 0 && (
+										<S.ItemDetail>
+											<strong>Efeitos Mágicos:</strong> {weapon.magicalEffects.join(", ")}
 										</S.ItemDetail>
 									)}
 								</S.ItemDetails>
@@ -116,27 +204,37 @@ const EquipmentSection: React.FC<EquipmentSectionProps> = ({ items, trainings, c
 					{armors.map((armor) => (
 						<S.ItemCard key={armor.id}>
 							<S.ItemHeader>
-								<S.ItemName $rarity={armor.rarity}>{armor.name}</S.ItemName>
+								<S.ItemName $rarity={armor.rarity}>
+									{armor.name}
+									{getAnimaSymbols(armor.animaIdentity) && (
+										<S.AnimaSymbols>{getAnimaSymbols(armor.animaIdentity)}</S.AnimaSymbols>
+									)}
+								</S.ItemName>
 							</S.ItemHeader>
 							<S.ItemDetails>
-								{armor.armorPoints && (
+								{armor.armorHitPoints && (
 									<S.ItemDetail>
-										<strong>CA:</strong> {armor.armorPoints}
+										<strong>PA:</strong> {armor.armorHitPoints}
 									</S.ItemDetail>
 								)}
-								{armor.damageMitigationMinor && (
+								{armor.damageThreshold1 !== undefined && (
 									<S.ItemDetail>
-										<strong>Limiar Menor:</strong> {armor.damageMitigationMinor}
+										<strong>Limiares:</strong> {armor.damageThreshold1} / {armor.damageThreshold2}
 									</S.ItemDetail>
 								)}
-								{armor.damageMitigationMajor && (
+								{armor.category && (
 									<S.ItemDetail>
-										<strong>Limiar Maior:</strong> {armor.damageMitigationMajor}
+										<strong>Categoria:</strong> {armor.category}
 									</S.ItemDetail>
 								)}
-								{armor.effects && armor.effects.length > 0 && (
+								{armor.properties && armor.properties.length > 0 && (
 									<S.ItemDetail>
-										<strong>Efeitos:</strong> {armor.effects.join(", ")}
+										<strong>Propriedades:</strong> {armor.properties.join(", ")}
+									</S.ItemDetail>
+								)}
+								{armor.magicalEffects && armor.magicalEffects.length > 0 && (
+									<S.ItemDetail>
+										<strong>Efeitos Mágicos:</strong> {armor.magicalEffects.join(", ")}
 									</S.ItemDetail>
 								)}
 							</S.ItemDetails>
@@ -159,9 +257,19 @@ const EquipmentSection: React.FC<EquipmentSectionProps> = ({ items, trainings, c
 					{consumables.map((consumable) => (
 						<S.ItemCard key={consumable.id}>
 							<S.ItemHeader>
-								<S.ItemName $rarity={consumable.rarity}>{consumable.name}</S.ItemName>
+								<S.ItemName $rarity={consumable.rarity}>
+									{consumable.name}
+									{getAnimaSymbols(consumable.animaIdentity) && (
+										<S.AnimaSymbols>{getAnimaSymbols(consumable.animaIdentity)}</S.AnimaSymbols>
+									)}
+								</S.ItemName>
 							</S.ItemHeader>
 							<S.ItemDetails>
+								{consumable.consumableType && (
+									<S.ItemDetail>
+										<strong>Tipo:</strong> {consumable.consumableType}
+									</S.ItemDetail>
+								)}
 								{consumable.uses && (
 									<S.ItemDetail>
 										<strong>Usos:</strong> {consumable.uses}
@@ -175,6 +283,11 @@ const EquipmentSection: React.FC<EquipmentSectionProps> = ({ items, trainings, c
 								{consumable.effects && consumable.effects.length > 0 && (
 									<S.ItemDetail>
 										<strong>Efeitos:</strong> {consumable.effects.join(", ")}
+									</S.ItemDetail>
+								)}
+								{consumable.magicalEffects && consumable.magicalEffects.length > 0 && (
+									<S.ItemDetail>
+										<strong>Efeitos Mágicos:</strong> {consumable.magicalEffects.join(", ")}
 									</S.ItemDetail>
 								)}
 							</S.ItemDetails>
@@ -197,20 +310,41 @@ const EquipmentSection: React.FC<EquipmentSectionProps> = ({ items, trainings, c
 					{others.map((item) => (
 						<S.ItemCard key={item.id}>
 							<S.ItemHeader>
-								<S.ItemName $rarity={item.rarity}>{item.name}</S.ItemName>
+								<S.ItemName $rarity={item.rarity}>
+									{item.name}
+									{getAnimaSymbols(item.animaIdentity) && (
+										<S.AnimaSymbols>{getAnimaSymbols(item.animaIdentity)}</S.AnimaSymbols>
+									)}
+								</S.ItemName>
 							</S.ItemHeader>
 							<S.ItemDetails>
 								<S.ItemDetail>
-									<strong>Tipo:</strong> {item.type} - {item.subtype}
+									<strong>Tipo:</strong> {item.type}
+									{item.subtype && ` (${item.subtype})`}
 								</S.ItemDetail>
 								{item.attunement && (
 									<S.ItemDetail>
-										<strong>Requer Sintonia:</strong> Sim
+										<strong>Requer Sintonização:</strong> Sim
+									</S.ItemDetail>
+								)}
+								{item.magic && (
+									<S.ItemDetail>
+										<strong>Mágico:</strong> Sim
 									</S.ItemDetail>
 								)}
 								{item.price && (
 									<S.ItemDetail>
-										<strong>Preço:</strong> {item.price} moedas
+										<strong>Preço:</strong> {item.price} mo
+									</S.ItemDetail>
+								)}
+								{item.properties && item.properties.length > 0 && (
+									<S.ItemDetail>
+										<strong>Propriedades:</strong> {item.properties.join(", ")}
+									</S.ItemDetail>
+								)}
+								{item.magicalEffects && item.magicalEffects.length > 0 && (
+									<S.ItemDetail>
+										<strong>Efeitos Mágicos:</strong> {item.magicalEffects.join(", ")}
 									</S.ItemDetail>
 								)}
 							</S.ItemDetails>

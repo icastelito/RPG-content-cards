@@ -5,6 +5,37 @@ import { useState } from "react";
 import IconRender from "../IconRender";
 import EquipmentSection from "../EquipmentSection";
 
+const getAnimaSymbols = (animaIdentity?: string[]): string => {
+	if (!animaIdentity || animaIdentity.length === 0) return "";
+
+	const symbolMap: { [key: string]: string } = {
+		"Natura": "⚘",
+		"Intentum": "⌖",
+		"Égote": "⌬",
+		"Logos": "⚚",
+		"Ethos": "⚜",
+	};
+
+	// Contar ocorrências de cada tipo
+	const counts: { [key: string]: number } = {};
+	animaIdentity.forEach((identity) => {
+		counts[identity] = (counts[identity] || 0) + 1;
+	});
+
+	let result = "";
+
+	// Processar cada tipo único
+	Object.entries(counts).forEach(([identity, count]) => {
+		if (identity === "Neutro") {
+			result += `⊙${count > 1 ? count : ""}`;
+		} else if (symbolMap[identity]) {
+			result += symbolMap[identity].repeat(count);
+		}
+	});
+
+	return result;
+};
+
 type SortType = "alphabetical" | "attribute" | "trained";
 
 const CreatureCard: React.FC<CreatureCardProps> = ({ creature }) => {
@@ -225,16 +256,23 @@ const CreatureCard: React.FC<CreatureCardProps> = ({ creature }) => {
 				<S.CreatureCard>
 					<S.CreatureHeader>
 						<S.CreatureImageContainer>
-							{detailedCreature.image && (
+							{(detailedCreature.imagePath || detailedCreature.image) && (
 								<S.CreatureImage
-									src={`/img/regular/${detailedCreature.image}`}
+									src={detailedCreature.imagePath || `/img/regular/${detailedCreature.image}`}
 									alt={detailedCreature.name}
 								/>
 							)}
 						</S.CreatureImageContainer>
 
 						<S.CreatureBasicInfo>
-							<S.CreatureName>{detailedCreature.name}</S.CreatureName>
+							<S.CreatureNameContainer>
+								<S.CreatureName>{detailedCreature.name}</S.CreatureName>
+								{getAnimaSymbols(detailedCreature.animaIdentity) && (
+									<S.CreatureAnimaSymbols>
+										{getAnimaSymbols(detailedCreature.animaIdentity)}
+									</S.CreatureAnimaSymbols>
+								)}
+							</S.CreatureNameContainer>
 							<S.CreatureTypeInfo>
 								{detailedCreature.type} {detailedCreature.size}
 								{detailedCreature.subtype && ` (${detailedCreature.subtype})`}
@@ -454,17 +492,6 @@ const CreatureCard: React.FC<CreatureCardProps> = ({ creature }) => {
 								</S.SpellItem>
 							))}
 						</S.SpellsSection>
-					)}
-
-					{detailedCreature.animaIdentity && detailedCreature.animaIdentity.length > 0 && (
-						<S.AnimaSection>
-							<S.SectionTitle>Identidade Anima</S.SectionTitle>
-							<S.AnimaList>
-								{detailedCreature.animaIdentity.map((identity, index) => (
-									<S.AnimaItem key={index}>{identity}</S.AnimaItem>
-								))}
-							</S.AnimaList>
-						</S.AnimaSection>
 					)}
 				</S.CreatureCard>
 			</S.MainContent>

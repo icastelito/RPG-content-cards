@@ -6,20 +6,26 @@
 		"type": "Arma",
 		"subtype": "Adaga",
 		"rarity": "Comum",
-		"animaIdentity": [],
+		"animaIdentity": ["Neutro", "Neutro", "Neutro"],
 		"description": [
 			"Uma adaga pequena, fácil de esconder. Ideal para ataques furtivos e assassinatos silenciosos."
 		],
 		"price": 150,
 		"magic": false,
-		"damage": "1d4",
+		"properties": ["Arremesso", "Sutil", "Veneno"],
+		"baseDamage": "1d4",
 		"damageType": "Perfurante / Cortante",
 		"category": "Adagas",
-		"properties": ["Arremesso", "Sutil", "Veneno"],
-		"range": "Corpo a corpo - 6m/18m",
+		"affinities": [
+			{
+				"atributo": "Des",
+				"escala": "A"
+			}
+		],
+		"range": "Corpo a corpo",
+		"maxRange": "18m",
 		"weight": 1,
-		"attackAttribute": "precision",
-		"targetSkill": "desarme"
+		"imagePath": "/img/items/knife.jpg"
 	},
 	{
 		"id": 2,
@@ -34,14 +40,23 @@
 		],
 		"price": 300,
 		"magic": false,
-		"damage": "1d6",
+		"properties": ["Sutil", "Equilibrada"],
+		"baseDamage": "1d6",
 		"damageType": "Cortante",
 		"category": "Espadas Curtas",
-		"properties": ["Sutil", "Equilibrada"],
+		"affinities": [
+			{
+				"atributo": "Des",
+				"escala": "B"
+			},
+			{
+				"atributo": "For",
+				"escala": "C"
+			}
+		],
 		"range": "Corpo a corpo",
 		"weight": 2,
-		"attackAttribute": "precision",
-		"targetSkill": "manuseio"
+		"imagePath": "/img/items/espada_elfica.jpg"
 	},
 	{
 		"id": 3,
@@ -56,11 +71,11 @@
 		],
 		"price": 200,
 		"magic": false,
-		"damageMitigationMinor": 2,
-		"damageMitigationMajor": 1,
-		"effects": ["Não penaliza furtividade"],
+		"properties": ["Não penaliza furtividade"],
+		"damageThreshold1": 2,
+		"damageThreshold2": 1,
 		"category": "Armadura Leve",
-		"armorPoints": 12
+		"armorHitPoints": 12
 	},
 	{
 		"id": 4,
@@ -107,13 +122,18 @@
 		],
 		"price": 180,
 		"magic": false,
-		"damage": "1d6",
+		"properties": ["Duas Mãos", "Munição"],
+		"baseDamage": "1d6",
 		"damageType": "Perfurante",
 		"category": "Arcos",
-		"properties": ["Duas Mãos", "Munição"],
-		"range": "45m/180m",
-		"weight": 2,
-		"attackAttribute": "precision",
-		"targetSkill": "pontaria"
+		"affinities": [
+			{
+				"atributo": "Des",
+				"escala": "B"
+			}
+		],
+		"range": "45m",
+		"maxRange": "180m",
+		"weight": 2
 	}
 ]

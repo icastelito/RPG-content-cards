@@ -95,6 +95,16 @@ export const ItemName = styled.h5<{ $rarity: string }>`
 				return theme.colors.text;
 		}
 	}};
+	display: flex;
+	align-items: center;
+	gap: 8px;
+`;
+
+export const AnimaSymbols = styled.span`
+	font-size: 16px;
+	color: ${({ theme }) => theme.colors.secondary};
+	font-weight: bold;
+	opacity: 0.9;
 `;
 
 export const TrainingBadge = styled.span`
